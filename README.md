@@ -13,7 +13,7 @@ on-device scraping, and having every installed copy of the app hit
 PCPSR's website independently is both unreliable and rude. So:
 
 ```
-[GitHub Actions cron, every 6h]           [Flutter app]
+[GitHub Actions cron, every 30m]          [Flutter app]
    scraper_backend/fetch_polls.py    →    fetches data/fetched_data.json
    commits data/fetched_data.json         on open, pull-to-refresh, and
    to this repo                           best-effort WorkManager sync

@@ -104,8 +104,21 @@ class DataFetchResult {
         return 'Cached (last successful fetch)';
       case DataSource.seed:
         return kDataUrl.isEmpty
-            ? 'Bundled seed data - configure DATA_URL for live updates'
-            : 'Bundled seed data - network unavailable';
+            ? 'Bundled seed data'
+            : 'Bundled seed data - live feed configured';
+    }
+  }
+
+  String get liveStatus {
+    switch (source) {
+      case DataSource.live:
+        return 'Live feed connected';
+      case DataSource.cache:
+        return 'Live feed unavailable - showing last successful data';
+      case DataSource.seed:
+        return kDataUrl.isEmpty
+            ? 'Live feed not configured'
+            : 'Live feed not available yet';
     }
   }
 }
