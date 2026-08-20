@@ -59,16 +59,39 @@ class PredictionService {
     final total = fatah + coalition + other;
     final unresolvedPenalty = data.unresolvedConditions.length * 0.7;
     final undecidedPenalty = undecided * 0.12;
-    final newsRisk = _newsRisk(data.newsSignals);
-    if (data.newsSignals.isNotEmpty) {
+    final reviewedSignals = data.newsSignals
+        .where((signal) =>
+            signal.reviewStatus == 'reviewed' && signal.confidencePct >= 60)
+        .toList();
+    final newsRisk = _newsRisk(reviewedSignals);
+    final coalitionRisk = _risk(reviewedSignals, 'coalition_probability');
+    final delayRisk = _risk(reviewedSignals, 'election_delay');
+    final gazaRisk = _risk(reviewedSignals, 'gaza_feasibility');
+    final jerusalemRisk = _risk(reviewedSignals, 'jerusalem_feasibility');
+    final turnoutRisk = _risk(reviewedSignals, 'turnout_uncertainty');
+    final coalitionChanges = reviewedSignals
+        .where((signal) => signal.coalitionAction != 'none')
+        .map((signal) =>
+            '${signal.source}: ${signal.coalitionAction} ${signal.affectedEntities.join(', ')}')
+        .toList();
+    final entityUpdates =
+        reviewedSignals.expand((signal) => signal.entityUpdates).toList();
+    if (reviewedSignals.isNotEmpty) {
       factors.add(
-        'News signals add ${newsRisk.toStringAsFixed(1)} pts of uncertainty; they do not rewrite poll shares.',
+        'Reviewed news: ${reviewedSignals.length} signal(s) add ${newsRisk.toStringAsFixed(1)} pts of uncertainty; poll shares remain source-provided.',
       );
     }
+    final rawSignals = data.newsSignals.length - reviewedSignals.length;
+    if (rawSignals > 0) {
+      factors.add(
+          '$rawSignals unreviewed headline(s) are visible but do not affect the model.');
+    }
+    if (coalitionChanges.isNotEmpty) {
+      factors.add('Coalition evidence: ${coalitionChanges.join('; ')}');
+    }
     final unmeasuredContenders = data.contenders
-        .where((contender) => !contender.pollTreatment
-            .toLowerCase()
-            .contains('standalone'))
+        .where((contender) =>
+            !contender.pollTreatment.toLowerCase().contains('standalone'))
         .map((contender) => contender.name)
         .toList();
     if (unmeasuredContenders.isNotEmpty) {
@@ -83,24 +106,46 @@ class PredictionService {
       uncertaintyPct: (data.latestPoll.marginOfErrorPct +
               unresolvedPenalty +
               undecidedPenalty +
-              newsRisk)
+              newsRisk +
+              (turnoutRisk * 0.1))
           .clamp(3, 12)
           .toDouble(),
       factors: factors,
+      coalitionProbabilityRiskPct: coalitionRisk,
+      electionDelayRiskPct: delayRisk,
+      gazaFeasibilityRiskPct: gazaRisk,
+      jerusalemFeasibilityRiskPct: jerusalemRisk,
+      turnoutUncertaintyPct: turnoutRisk,
+      reviewedNewsCount: reviewedSignals.length,
+      coalitionChanges: coalitionChanges,
+      entityUpdates: entityUpdates,
     );
   }
 
   double _newsRisk(List<NewsSignal> signals) {
-    return signals.fold<double>(0, (risk, signal) {
-      final categoryWeight = switch (signal.category) {
-        'access' => 1.2,
-        'coalition' => 0.9,
-        'official' => 0.7,
-        'turnout' => 0.7,
-        _ => 0.4,
-      };
-      final normalizedImpact = (signal.impactScore / 10).clamp(0, 1);
-      return risk + (normalizedImpact * categoryWeight);
-    }).clamp(0, 3).toDouble();
+    return signals
+        .fold<double>(0, (risk, signal) {
+          final categoryWeight = switch (signal.category) {
+            'access' => 1.2,
+            'coalition' => 0.9,
+            'official' => 0.7,
+            'turnout' => 0.7,
+            _ => 0.4,
+          };
+          final normalizedImpact = (signal.impactScore / 10).clamp(0, 1);
+          return risk + (normalizedImpact * categoryWeight);
+        })
+        .clamp(0, 3)
+        .toDouble();
+  }
+
+  double _risk(List<NewsSignal> signals, String key) {
+    return signals
+        .fold<double>(0, (risk, signal) {
+          final effect = signal.riskEffects[key] ?? 0;
+          return risk + (effect * (signal.confidencePct / 100));
+        })
+        .clamp(0, 100)
+        .toDouble();
   }
 }

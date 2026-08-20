@@ -229,6 +229,7 @@
       "url": "https://english.wafa.ps/",
       "feed_url": "https://english.wafa.ps/rss.aspx",
       "news_category": "official",
+      "news_keywords": ["election", "elections", "electoral", "vote", "voting", "coalition", "party", "list", "CEC", "legislative council"],
       "use_for": "Official statements, CEC updates, government and party announcements"
     },
     {
@@ -249,6 +250,7 @@
       "url": "https://english.pnn.ps/",
       "feed_url": "https://english.pnn.ps/feed/",
       "news_category": "general",
+      "news_keywords": ["election", "elections", "electoral", "vote", "voting", "coalition", "party", "list", "PLC", "legislative council"],
       "use_for": "West Bank field reporting, civic affairs and political developments"
     },
     {

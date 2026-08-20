@@ -82,6 +82,37 @@ All party, coalition, candidate, and source facts belong in the dataset.
 The Flutter UI must treat them as provisional unless the record says
 `official`, and must tolerate new, merged, renamed, or withdrawn lists.
 
+### Reviewing news evidence
+
+Fresh RSS headlines are written with `review_status: "unreviewed"` and
+`impact_score: 0`. They appear in the app but cannot affect predictions.
+Only headlines matching the source's `news_keywords` list are ingested;
+general public news is ignored. The keyword list is deliberately focused
+on elections, voting, parties, lists, coalitions, and the Legislative Council.
+After a human verifies a headline, annotate its record in
+`data/fetched_data.json` with fields such as:
+
+```json
+{
+  "review_status": "reviewed",
+  "confidence_pct": 80,
+  "affected_entities": ["list or party name"],
+  "coalition_action": "join|leave|uncertain|none",
+  "risk_effects": {
+    "coalition_probability": 5,
+    "election_delay": 2,
+    "gaza_feasibility": 0,
+    "jerusalem_feasibility": 0,
+    "turnout_uncertainty": 3
+  },
+  "entity_updates": ["Describe the verified status change"]
+}
+```
+
+Only reviewed signals with at least 60% confidence affect the scenario
+risk panel. They adjust uncertainty and risk, not poll percentages. The
+scraper preserves these reviewed annotations across future headline refreshes.
+
 ## What this app deliberately does NOT do
 
 - Output a single precise vote-count prediction. Palestinian polling is

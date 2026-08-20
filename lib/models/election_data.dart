@@ -146,7 +146,8 @@ class ContenderProfile {
   factory ContenderProfile.fromJson(Map<String, dynamic> j) => ContenderProfile(
         name: j['name'] as String,
         status: (j['status'] as String?) ?? 'tracked',
-        pollTreatment: (j['poll_treatment'] as String?) ?? 'not separately polled',
+        pollTreatment:
+            (j['poll_treatment'] as String?) ?? 'not separately polled',
         notes: (j['notes'] as String?) ?? '',
         sources: ((j['sources'] as List?) ?? const [])
             .map((e) => e.toString())
@@ -255,7 +256,7 @@ class CandidateProfile {
         origin: (j['origin'] as String?) ?? 'Not yet verified',
         localityType: (j['locality_type'] as String?) ?? 'unknown',
         geographicSignal: (j['geographic_signal'] as String?) ??
-          'No verified geographic signal yet',
+            'No verified geographic signal yet',
         role: (j['role'] as String?) ?? 'Not yet documented',
         profession: (j['profession'] as String?) ?? 'Not yet documented',
         publicProfile: (j['public_profile'] as String?) ?? 'Not yet assessed',
@@ -278,6 +279,12 @@ class NewsSignal {
   final String category;
   final double impactScore;
   final String summary;
+  final String reviewStatus;
+  final double confidencePct;
+  final List<String> affectedEntities;
+  final String coalitionAction;
+  final Map<String, double> riskEffects;
+  final List<String> entityUpdates;
 
   NewsSignal({
     required this.source,
@@ -288,6 +295,12 @@ class NewsSignal {
     required this.category,
     required this.impactScore,
     required this.summary,
+    required this.reviewStatus,
+    required this.confidencePct,
+    required this.affectedEntities,
+    required this.coalitionAction,
+    required this.riskEffects,
+    required this.entityUpdates,
   });
 
   factory NewsSignal.fromJson(Map<String, dynamic> j) => NewsSignal(
@@ -299,6 +312,18 @@ class NewsSignal {
         category: (j['category'] as String?) ?? 'general',
         impactScore: (j['impact_score'] as num?)?.toDouble() ?? 0,
         summary: (j['summary'] as String?) ?? '',
+        reviewStatus: (j['review_status'] as String?) ?? 'unreviewed',
+        confidencePct: (j['confidence_pct'] as num?)?.toDouble() ?? 0,
+        affectedEntities: ((j['affected_entities'] as List?) ?? const [])
+            .map((e) => e.toString())
+            .toList(),
+        coalitionAction: (j['coalition_action'] as String?) ?? 'none',
+        riskEffects: ((j['risk_effects'] as Map?) ?? const {}).map(
+            (key, value) =>
+                MapEntry(key.toString(), (value as num?)?.toDouble() ?? 0)),
+        entityUpdates: ((j['entity_updates'] as List?) ?? const [])
+            .map((e) => e.toString())
+            .toList(),
       );
 }
 
@@ -385,7 +410,7 @@ class ElectionDataset {
       localElections2026:
           LocalElections2026.fromJson(j['local_elections_2026']),
       latestPoll: LatestPoll.fromJson(j['latest_national_poll']),
-        contenders: ((j['tracked_contenders'] as List?) ?? const [])
+      contenders: ((j['tracked_contenders'] as List?) ?? const [])
           .map((e) => ContenderProfile.fromJson(e as Map<String, dynamic>))
           .toList(),
       confidenceTrend:
@@ -435,6 +460,14 @@ class ScenarioResult {
   final double otherPct;
   final double uncertaintyPct;
   final List<String> factors;
+  final double coalitionProbabilityRiskPct;
+  final double electionDelayRiskPct;
+  final double gazaFeasibilityRiskPct;
+  final double jerusalemFeasibilityRiskPct;
+  final double turnoutUncertaintyPct;
+  final int reviewedNewsCount;
+  final List<String> coalitionChanges;
+  final List<String> entityUpdates;
 
   ScenarioResult({
     required this.fatahPct,
@@ -442,5 +475,13 @@ class ScenarioResult {
     required this.otherPct,
     required this.uncertaintyPct,
     required this.factors,
+    required this.coalitionProbabilityRiskPct,
+    required this.electionDelayRiskPct,
+    required this.gazaFeasibilityRiskPct,
+    required this.jerusalemFeasibilityRiskPct,
+    required this.turnoutUncertaintyPct,
+    required this.reviewedNewsCount,
+    required this.coalitionChanges,
+    required this.entityUpdates,
   });
 }

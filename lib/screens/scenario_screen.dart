@@ -28,8 +28,7 @@ class _ScenarioScreenState extends State<ScenarioScreen> {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          Text(strings.whatIf,
-              style: Theme.of(context).textTheme.titleLarge),
+          Text(strings.whatIf, style: Theme.of(context).textTheme.titleLarge),
           const SizedBox(height: 4),
           Text(
             '${strings.t('Starting from the latest source data', 'بالاعتماد على أحدث بيانات المصدر')} (${widget.data.latestPoll.source}, ${widget.data.latestPoll.dateRange}). '
@@ -37,18 +36,23 @@ class _ScenarioScreenState extends State<ScenarioScreen> {
             '${widget.data.coalitionReporting.summary}',
             style: const TextStyle(fontSize: 13, color: Colors.black54),
           ),
+          const SizedBox(height: 18),
+          _EvidenceRiskPanel(result: result),
           const SizedBox(height: 20),
           _ToggleTile(
             title: strings.gazaVotes,
-            subtitle: strings.t('Uses Gaza and West Bank poll splits when available', 'يستخدم تقسيم استطلاع غزة والضفة عند توفره'),
+            subtitle: strings.t(
+                'Uses Gaza and West Bank poll splits when available',
+                'يستخدم تقسيم استطلاع غزة والضفة عند توفره'),
             value: toggles.gazaVotes,
             onChanged: (v) =>
                 setState(() => toggles = toggles.copyWith(gazaVotes: v)),
           ),
           _ToggleTile(
             title: strings.jerusalemVotes,
-            subtitle:
-                strings.t('Israel permission remains a key legal and political condition', 'تبقى موافقة إسرائيل شرطاً قانونياً وسياسياً أساسياً'),
+            subtitle: strings.t(
+                'Israel permission remains a key legal and political condition',
+                'تبقى موافقة إسرائيل شرطاً قانونياً وسياسياً أساسياً'),
             value: toggles.jerusalemVotes,
             onChanged: (v) =>
                 setState(() => toggles = toggles.copyWith(jerusalemVotes: v)),
@@ -66,7 +70,9 @@ class _ScenarioScreenState extends State<ScenarioScreen> {
             leftPct: result.coalitionPct,
             rightPct: result.fatahPct,
             otherPct: result.otherPct,
-            leftLabel: toggles.coalitionForms ? strings.coalition : strings.t('Hamas', 'حماس'),
+            leftLabel: toggles.coalitionForms
+                ? strings.coalition
+                : strings.t('Hamas', 'حماس'),
             rightLabel: strings.t('Fatah', 'فتح'),
             leftColor: AppColors.hamas,
             rightColor: AppColors.fatah,
@@ -126,6 +132,74 @@ class _ToggleTile extends StatelessWidget {
         subtitle: Text(subtitle,
             style: const TextStyle(fontSize: 12, color: Colors.black54)),
         activeThumbColor: AppColors.hamas,
+      ),
+    );
+  }
+}
+
+class _EvidenceRiskPanel extends StatelessWidget {
+  final ScenarioResult result;
+
+  const _EvidenceRiskPanel({required this.result});
+
+  @override
+  Widget build(BuildContext context) {
+    final strings = AppStrings.of(context);
+    final risks = [
+      (strings.coalitionProbability, result.coalitionProbabilityRiskPct),
+      (strings.electionDelay, result.electionDelayRiskPct),
+      (strings.gazaFeasibility, result.gazaFeasibilityRiskPct),
+      (strings.jerusalemFeasibility, result.jerusalemFeasibilityRiskPct),
+      (strings.turnoutUncertainty, result.turnoutUncertaintyPct),
+    ];
+    return Container(
+      padding: const EdgeInsets.all(13),
+      decoration: BoxDecoration(
+        color: AppColors.paper,
+        borderRadius: BorderRadius.circular(8),
+        border: Border.all(color: AppColors.undecided),
+      ),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          Text(strings.evidenceRisk,
+              style: Theme.of(context).textTheme.titleMedium),
+          const SizedBox(height: 4),
+          Text(
+            '${strings.reviewedEvidence}: ${result.reviewedNewsCount}',
+            style: Theme.of(context).textTheme.bodySmall,
+          ),
+          const SizedBox(height: 10),
+          ...risks.map((risk) => Padding(
+                padding: const EdgeInsets.only(bottom: 7),
+                child: Row(
+                  children: [
+                    Expanded(
+                        child: Text(risk.$1,
+                            style: const TextStyle(fontSize: 11))),
+                    Text('${risk.$2.toStringAsFixed(1)}%',
+                        style: const TextStyle(
+                            fontSize: 11, fontWeight: FontWeight.w700)),
+                  ],
+                ),
+              )),
+          if (result.coalitionChanges.isNotEmpty) ...[
+            const Divider(height: 18),
+            Text(strings.coalitionEvidence,
+                style:
+                    const TextStyle(fontSize: 11, fontWeight: FontWeight.w700)),
+            ...result.coalitionChanges.map((change) => Text('- $change',
+                style: const TextStyle(fontSize: 11, color: Colors.black54))),
+          ],
+          if (result.entityUpdates.isNotEmpty) ...[
+            const Divider(height: 18),
+            Text(strings.entityUpdates,
+                style:
+                    const TextStyle(fontSize: 11, fontWeight: FontWeight.w700)),
+            ...result.entityUpdates.map((update) => Text('- $update',
+                style: const TextStyle(fontSize: 11, color: Colors.black54))),
+          ],
+        ],
       ),
     );
   }

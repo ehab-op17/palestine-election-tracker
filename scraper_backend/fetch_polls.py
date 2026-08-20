@@ -140,18 +140,23 @@ def enrich_from_cec(dataset: dict) -> None:
 
 
 def fetch_news_signals(sources: list[dict]) -> list[dict]:
-    """Fetch only parseable RSS headlines; never infer vote shares from news."""
+    """Fetch election/coalition headlines; never infer vote shares from news."""
     signals = []
     for feed in sources:
         try:
             resp = requests.get(feed["feed_url"], headers=HEADERS, timeout=20)
             resp.raise_for_status()
             root = ET.fromstring(resp.content)
-            for item in root.findall(".//item")[:5]:
+            relevant_count = 0
+            for item in root.findall(".//item"):
                 title = (item.findtext("title") or "").strip()
                 link = (item.findtext("link") or "").strip()
                 published = (item.findtext("pubDate") or "").strip()
-                if not title or not link:
+                description = (item.findtext("description") or "").strip()
+                searchable = f"{title} {description}".lower()
+                keywords = [keyword.lower() for keyword in feed.get("news_keywords", [])]
+                if (not title or not link or
+                        not any(keyword in searchable for keyword in keywords)):
                     continue
                 signals.append(
                     {
@@ -163,11 +168,40 @@ def fetch_news_signals(sources: list[dict]) -> list[dict]:
                         "category": feed.get("news_category", "general"),
                         "impact_score": 0,
                         "summary": "Headline captured from a public feed. Human review is required before it affects model risk.",
+                        "review_status": "unreviewed",
+                        "confidence_pct": 0,
+                        "affected_entities": [],
+                        "coalition_action": "none",
+                        "risk_effects": {},
+                        "entity_updates": [],
                     }
                 )
+                relevant_count += 1
+                if relevant_count >= 5:
+                    break
         except (requests.RequestException, ET.ParseError) as e:
             print(f"News feed failed for {feed['name']}, keeping prior signals: {e}", file=sys.stderr)
     return signals
+
+
+def merge_news_signals(existing: list[dict], fetched: list[dict]) -> list[dict]:
+    """Refresh headlines without deleting reviewed human annotations."""
+    reviewed = {
+        signal.get("url"): signal
+        for signal in existing
+        if signal.get("review_status") == "reviewed" and signal.get("url")
+    }
+    merged = []
+    for signal in fetched:
+        merged.append(reviewed.get(signal.get("url"), signal))
+    fetched_urls = {signal.get("url") for signal in fetched}
+    merged.extend(
+        signal
+        for signal in existing
+        if signal.get("review_status") == "reviewed"
+        and signal.get("url") not in fetched_urls
+    )
+    return merged
 
 
 def build_dataset() -> dict:
@@ -227,7 +261,9 @@ def build_dataset() -> dict:
     ]
     fetched_signals = fetch_news_signals(news_sources)
     if fetched_signals:
-        dataset["news_signals"] = fetched_signals
+        dataset["news_signals"] = merge_news_signals(
+            dataset.get("news_signals", []), fetched_signals
+        )
 
     dataset["data_quality"] = {
         "model_status": "public-data-nowcast",
