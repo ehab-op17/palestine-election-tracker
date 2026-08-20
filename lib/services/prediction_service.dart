@@ -61,7 +61,9 @@ class PredictionService {
     final undecidedPenalty = undecided * 0.12;
     final reviewedSignals = data.newsSignals
         .where((signal) =>
-            signal.reviewStatus == 'reviewed' && signal.confidencePct >= 60)
+            (signal.reviewStatus == 'reviewed' ||
+                signal.reviewStatus == 'auto_reviewed') &&
+            signal.confidencePct >= 60)
         .toList();
     final newsRisk = _newsRisk(reviewedSignals);
     final coalitionRisk = _risk(reviewedSignals, 'coalition_probability');

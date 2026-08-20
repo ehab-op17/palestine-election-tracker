@@ -149,7 +149,9 @@ class _SignalCard extends StatelessWidget {
           _Pill(
               label: signal.reviewStatus == 'reviewed'
                   ? AppStrings.of(context).reviewed
-                  : AppStrings.of(context).unreviewed),
+                  : signal.reviewStatus == 'auto_reviewed'
+                      ? AppStrings.of(context).autoReviewed
+                      : AppStrings.of(context).unreviewed),
           const SizedBox(height: 6),
           Text(signal.title,
               style: const TextStyle(

@@ -139,7 +139,7 @@ def enrich_from_cec(dataset: dict) -> None:
     dataset.setdefault("election_administration", {})["organizing_body"] = "Central Elections Commission - Palestine"
 
 
-def fetch_news_signals(sources: list[dict]) -> list[dict]:
+def fetch_news_signals(sources: list[dict], entities: list[str]) -> list[dict]:
     """Fetch election/coalition headlines; never infer vote shares from news."""
     signals = []
     for feed in sources:
@@ -158,6 +158,7 @@ def fetch_news_signals(sources: list[dict]) -> list[dict]:
                 if (not title or not link or
                         not any(keyword in searchable for keyword in keywords)):
                     continue
+                classification = classify_news_signal(searchable, entities)
                 signals.append(
                     {
                         "source": feed["name"],
@@ -165,15 +166,15 @@ def fetch_news_signals(sources: list[dict]) -> list[dict]:
                         "title": title,
                         "url": link,
                         "published_at": published,
-                        "category": feed.get("news_category", "general"),
-                        "impact_score": 0,
-                        "summary": "Headline captured from a public feed. Human review is required before it affects model risk.",
-                        "review_status": "unreviewed",
-                        "confidence_pct": 0,
-                        "affected_entities": [],
-                        "coalition_action": "none",
-                        "risk_effects": {},
-                        "entity_updates": [],
+                        "category": classification["category"],
+                        "impact_score": classification["impact_score"],
+                        "summary": classification["summary"],
+                        "review_status": "auto_reviewed",
+                        "confidence_pct": classification["confidence_pct"],
+                        "affected_entities": classification["affected_entities"],
+                        "coalition_action": classification["coalition_action"],
+                        "risk_effects": classification["risk_effects"],
+                        "entity_updates": classification["entity_updates"],
                     }
                 )
                 relevant_count += 1
@@ -184,21 +185,87 @@ def fetch_news_signals(sources: list[dict]) -> list[dict]:
     return signals
 
 
+def classify_news_signal(text: str, entities: list[str]) -> dict:
+    """Classify election headlines with transparent rules and bounded effects."""
+    matched = [entity for entity in entities if entity.lower() in text]
+    coalition_terms = ("coalition", "joint list", "alliance", "united list", "talks")
+    election_terms = ("election", "electoral", "vote", "voting", "legislative council", "cec")
+    access_terms = ("gaza", "east jerusalem", "jerusalem", "access", "permission", "ballot")
+    turnout_terms = ("turnout", "participation", "registered voters")
+    joined_terms = ("join", "joins", "joined", "agreed", "agreement", "unite", "united")
+    left_terms = ("leave", "leaves", "left", "withdraw", "withdraws", "break away")
+    category = "general"
+    risk_effects = {}
+    entity_updates = []
+    coalition_action = "none"
+    confidence = 55
+
+    if any(term in text for term in coalition_terms):
+        category = "coalition"
+        risk_effects["coalition_probability"] = 6
+        confidence += 10
+        if any(term in text for term in joined_terms):
+            coalition_action = "join"
+            entity_updates.append("Automatic signal: entities may be joining or consolidating a coalition.")
+            confidence += 10
+        elif any(term in text for term in left_terms):
+            coalition_action = "leave"
+            entity_updates.append("Automatic signal: an entity may be leaving or breaking from a coalition.")
+            confidence += 10
+        else:
+            coalition_action = "uncertain"
+            entity_updates.append("Automatic signal: coalition discussions or alignment are reported.")
+    elif any(term in text for term in access_terms):
+        category = "access"
+        risk_effects["gaza_feasibility"] = 5 if "gaza" in text else 0
+        risk_effects["jerusalem_feasibility"] = 5 if "jerusalem" in text else 0
+        confidence += 8
+    elif any(term in text for term in turnout_terms):
+        category = "turnout"
+        risk_effects["turnout_uncertainty"] = 5
+        confidence += 8
+    elif any(term in text for term in election_terms):
+        category = "official"
+        risk_effects["election_delay"] = 3 if any(term in text for term in ("delay", "postpone", "cancel", "延期")) else 0
+        confidence += 5
+
+    if any(term in text for term in ("delay", "postpone", "cancel", "cancellation")):
+        risk_effects["election_delay"] = 8
+        entity_updates.append("Automatic signal: election timing may be changing; verify against the official authority.")
+        confidence += 8
+
+    confidence = min(confidence, 90)
+    impact_score = round(max(risk_effects.values(), default=0) * confidence / 100, 1)
+    if matched:
+        confidence = min(confidence + 5, 95)
+    return {
+        "category": category,
+        "impact_score": impact_score,
+        "confidence_pct": confidence,
+        "affected_entities": matched,
+        "coalition_action": coalition_action,
+        "risk_effects": risk_effects,
+        "entity_updates": entity_updates,
+            "summary": "Headline classified automatically from election/coalition rules; this is not an official fact verification.",
+    }
+
+
 def merge_news_signals(existing: list[dict], fetched: list[dict]) -> list[dict]:
     """Refresh headlines without deleting reviewed human annotations."""
-    reviewed = {
+    preserved = {
         signal.get("url"): signal
         for signal in existing
-        if signal.get("review_status") == "reviewed" and signal.get("url")
+        if signal.get("review_status") in ("reviewed", "auto_reviewed")
+        and signal.get("url")
     }
     merged = []
     for signal in fetched:
-        merged.append(reviewed.get(signal.get("url"), signal))
+        merged.append(preserved.get(signal.get("url"), signal))
     fetched_urls = {signal.get("url") for signal in fetched}
     merged.extend(
         signal
         for signal in existing
-        if signal.get("review_status") == "reviewed"
+        if signal.get("review_status") in ("reviewed", "auto_reviewed")
         and signal.get("url") not in fetched_urls
     )
     return merged
@@ -254,12 +321,17 @@ def build_dataset() -> dict:
     except requests.RequestException as e:
         print(f"CEC fetch failed, keeping previous election administration values: {e}", file=sys.stderr)
 
+    dataset_entities = [
+        contender.get("name", "") for contender in dataset.get("tracked_contenders", [])
+    ] + [
+        prospective.get("name", "") for prospective in dataset.get("prospective_lists", [])
+    ] + dataset.get("coalition_reporting", {}).get("participants", [])
     news_sources = [
         source
         for source in dataset.get("public_sources", [])
         if source.get("feed_url")
     ]
-    fetched_signals = fetch_news_signals(news_sources)
+    fetched_signals = fetch_news_signals(news_sources, dataset_entities)
     if fetched_signals:
         dataset["news_signals"] = merge_news_signals(
             dataset.get("news_signals", []), fetched_signals

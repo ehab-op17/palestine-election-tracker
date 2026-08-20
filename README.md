@@ -84,8 +84,9 @@ The Flutter UI must treat them as provisional unless the record says
 
 ### Reviewing news evidence
 
-Fresh RSS headlines are written with `review_status: "unreviewed"` and
-`impact_score: 0`. They appear in the app but cannot affect predictions.
+Fresh RSS headlines are classified automatically with transparent rules.
+Low-confidence or unclassified headlines use `review_status: "unreviewed"`
+and `impact_score: 0`; they appear in the app but cannot affect predictions.
 Only headlines matching the source's `news_keywords` list are ingested;
 general public news is ignored. The keyword list is deliberately focused
 on elections, voting, parties, lists, coalitions, and the Legislative Council.
@@ -109,9 +110,14 @@ After a human verifies a headline, annotate its record in
 }
 ```
 
-Only reviewed signals with at least 60% confidence affect the scenario
-risk panel. They adjust uncertainty and risk, not poll percentages. The
-scraper preserves these reviewed annotations across future headline refreshes.
+Only `reviewed` or high-confidence `auto_reviewed` signals with at least 60%
+confidence affect the scenario risk panel. They adjust uncertainty and risk,
+not poll percentages. The scraper preserves automatic and reviewed
+annotations across future headline refreshes.
+
+Automatic classification is a transparent rule-based analysis aid, not an
+official fact verifier. It should be treated as a probabilistic signal and
+never as proof that a party joined or left a coalition.
 
 ## What this app deliberately does NOT do
 

@@ -159,6 +159,7 @@ class AppStrings {
       isArabic ? 'تحديثات الأطراف والقوائم' : 'Party/list updates';
   String get reviewed => isArabic ? 'موثق' : 'Reviewed';
   String get unreviewed => isArabic ? 'بانتظار التحقق' : 'Awaiting review';
+  String get autoReviewed => isArabic ? 'مصنف آلياً' : 'Auto-classified';
   String get affectedEntities =>
       isArabic ? 'الأطراف المتأثرة' : 'Affected entities';
   String get candidateMethodology => isArabic

@@ -46,6 +46,8 @@ class _PartiesScreenState extends State<PartiesScreen> {
           const SizedBox(height: 16),
           _CoalitionNotice(reporting: data.coalitionReporting),
           const SizedBox(height: 14),
+          _VerifiedUpdates(signals: data.newsSignals),
+          const SizedBox(height: 14),
           const _CandidateMethodology(),
           const SizedBox(height: 14),
           Wrap(
@@ -69,6 +71,62 @@ class _PartiesScreenState extends State<PartiesScreen> {
   }
 
   void _setFilter(String filter) => setState(() => _filter = filter);
+}
+
+class _VerifiedUpdates extends StatelessWidget {
+  final List<NewsSignal> signals;
+
+  const _VerifiedUpdates({required this.signals});
+
+  @override
+  Widget build(BuildContext context) {
+    final strings = AppStrings.of(context);
+    final updates = signals
+        .where((signal) =>
+            signal.reviewStatus == 'reviewed' &&
+            (signal.entityUpdates.isNotEmpty ||
+                signal.coalitionAction != 'none'))
+        .toList();
+    if (updates.isEmpty) return const SizedBox.shrink();
+
+    return Container(
+      width: double.infinity,
+      padding: const EdgeInsets.all(13),
+      decoration: BoxDecoration(
+        color: AppColors.mint,
+        borderRadius: BorderRadius.circular(8),
+      ),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          Text(strings.entityUpdates,
+              style: Theme.of(context).textTheme.titleMedium),
+          const SizedBox(height: 7),
+          ...updates.map((signal) => Padding(
+                padding: const EdgeInsets.only(bottom: 8),
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Text(signal.title,
+                        style: const TextStyle(
+                            fontSize: 12, fontWeight: FontWeight.w700)),
+                    if (signal.coalitionAction != 'none')
+                      Text(
+                          '${strings.coalitionEvidence}: ${signal.coalitionAction} ${signal.affectedEntities.join(', ')}',
+                          style: const TextStyle(
+                              fontSize: 11, color: Colors.black54)),
+                    ...signal.entityUpdates.map((update) => Text(
+                          '- $update',
+                          style: const TextStyle(
+                              fontSize: 11, color: Colors.black54),
+                        )),
+                  ],
+                ),
+              )),
+        ],
+      ),
+    );
+  }
 }
 
 class _FilterChip extends StatelessWidget {
