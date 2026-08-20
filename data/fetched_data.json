@@ -1,6 +1,6 @@
 {
   "meta": {
-    "generated_at": "2026-08-20T11:09:52.744656+00:00",
+    "generated_at": "2026-08-20T11:32:44.171627+00:00",
     "election_date": "2026-11-28",
     "note": "Seed data bundled with the app. The app will overwrite this with fetched_data.json from DATA_URL if reachable, but always falls back to this if the network call fails."
   },
@@ -311,6 +311,18 @@
       "url": "https://english.wafa.ps/",
       "feed_url": "https://english.wafa.ps/rss.aspx",
       "news_category": "official",
+      "news_keywords": [
+        "election",
+        "elections",
+        "electoral",
+        "vote",
+        "voting",
+        "coalition",
+        "party",
+        "list",
+        "CEC",
+        "legislative council"
+      ],
       "use_for": "Official statements, CEC updates, government and party announcements"
     },
     {
@@ -331,6 +343,18 @@
       "url": "https://english.pnn.ps/",
       "feed_url": "https://english.pnn.ps/feed/",
       "news_category": "general",
+      "news_keywords": [
+        "election",
+        "elections",
+        "electoral",
+        "vote",
+        "voting",
+        "coalition",
+        "party",
+        "list",
+        "PLC",
+        "legislative council"
+      ],
       "use_for": "West Bank field reporting, civic affairs and political developments"
     },
     {
@@ -361,37 +385,13 @@
       "published_at": "Thu, 20 Aug 2026 12:08:00 +0300",
       "category": "general",
       "impact_score": 0,
-      "summary": "Headline captured from a public feed. Human review is required before it affects model risk."
-    },
-    {
-      "source": "Palestine News Network",
-      "source_type": "Palestinian news network",
-      "title": "HRW: Israeli settler attacks in West Bank contributing to forced displacement of Palestinians",
-      "url": "https://english.pnn.ps/news/48242",
-      "published_at": "Thu, 20 Aug 2026 10:39:00 +0300",
-      "category": "general",
-      "impact_score": 0,
-      "summary": "Headline captured from a public feed. Human review is required before it affects model risk."
-    },
-    {
-      "source": "Palestine News Network",
-      "source_type": "Palestinian news network",
-      "title": "Traditional glassmaking in Hebron struggles to survive amid dwindling artisans",
-      "url": "https://english.pnn.ps/news/48241",
-      "published_at": "Wed, 19 Aug 2026 21:01:00 +0300",
-      "category": "general",
-      "impact_score": 0,
-      "summary": "Headline captured from a public feed. Human review is required before it affects model risk."
-    },
-    {
-      "source": "Palestine News Network",
-      "source_type": "Palestinian news network",
-      "title": "Gaza football academies face mounting challenges as war tests young players’ dreams",
-      "url": "https://english.pnn.ps/news/48240",
-      "published_at": "Wed, 19 Aug 2026 20:36:00 +0300",
-      "category": "general",
-      "impact_score": 0,
-      "summary": "Headline captured from a public feed. Human review is required before it affects model risk."
+      "summary": "Headline captured from a public feed. Human review is required before it affects model risk.",
+      "review_status": "unreviewed",
+      "confidence_pct": 0,
+      "affected_entities": [],
+      "coalition_action": "none",
+      "risk_effects": {},
+      "entity_updates": []
     },
     {
       "source": "Palestine News Network",
@@ -401,7 +401,61 @@
       "published_at": "Wed, 19 Aug 2026 10:18:00 +0300",
       "category": "general",
       "impact_score": 0,
-      "summary": "Headline captured from a public feed. Human review is required before it affects model risk."
+      "summary": "Headline captured from a public feed. Human review is required before it affects model risk.",
+      "review_status": "unreviewed",
+      "confidence_pct": 0,
+      "affected_entities": [],
+      "coalition_action": "none",
+      "risk_effects": {},
+      "entity_updates": []
+    },
+    {
+      "source": "Palestine News Network",
+      "source_type": "Palestinian news network",
+      "title": "Women’s Untold Stories:The Private life Behind Two and a Half Years of War and Genocide",
+      "url": "https://english.pnn.ps/news/48234",
+      "published_at": "Thu, 13 Aug 2026 11:19:00 +0300",
+      "category": "general",
+      "impact_score": 0,
+      "summary": "Headline captured from a public feed. Human review is required before it affects model risk.",
+      "review_status": "unreviewed",
+      "confidence_pct": 0,
+      "affected_entities": [],
+      "coalition_action": "none",
+      "risk_effects": {},
+      "entity_updates": []
+    },
+    {
+      "source": "Palestine News Network",
+      "source_type": "Palestinian news network",
+      "title": "Palestinian church official urges global Christian leaders to act over attacks on Christians",
+      "url": "https://english.pnn.ps/news/48232",
+      "published_at": "Tue, 11 Aug 2026 09:32:00 +0300",
+      "category": "general",
+      "impact_score": 0,
+      "summary": "Headline captured from a public feed. Human review is required before it affects model risk.",
+      "review_status": "unreviewed",
+      "confidence_pct": 0,
+      "affected_entities": [],
+      "coalition_action": "none",
+      "risk_effects": {},
+      "entity_updates": []
+    },
+    {
+      "source": "Palestine News Network",
+      "source_type": "Palestinian news network",
+      "title": "The Tourism Crisis in Bethlehem… It Is Not Caused by the Occupation Alone by Alice Kisiya",
+      "url": "https://english.pnn.ps/news/48229",
+      "published_at": "Wed, 05 Aug 2026 17:39:00 +0300",
+      "category": "general",
+      "impact_score": 0,
+      "summary": "Headline captured from a public feed. Human review is required before it affects model risk.",
+      "review_status": "unreviewed",
+      "confidence_pct": 0,
+      "affected_entities": [],
+      "coalition_action": "none",
+      "risk_effects": {},
+      "entity_updates": []
     }
   ],
   "data_quality": {
