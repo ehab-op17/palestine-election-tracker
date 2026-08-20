@@ -1,6 +1,6 @@
 {
   "meta": {
-    "generated_at": "2026-08-20T11:32:44.171627+00:00",
+    "generated_at": "2026-08-20T13:00:36.753477+00:00",
     "election_date": "2026-11-28",
     "note": "Seed data bundled with the app. The app will overwrite this with fetched_data.json from DATA_URL if reachable, but always falls back to this if the network call fails."
   },
@@ -383,14 +383,17 @@
       "title": "The CEC Announces an Increase in the percentage of Registrants in the West Bank to 87.2%",
       "url": "https://english.pnn.ps/news/48243",
       "published_at": "Thu, 20 Aug 2026 12:08:00 +0300",
-      "category": "general",
-      "impact_score": 0,
-      "summary": "Headline captured from a public feed. Human review is required before it affects model risk.",
-      "review_status": "unreviewed",
-      "confidence_pct": 0,
+      "category": "access",
+      "impact_score": 3.1,
+      "summary": "Headline classified automatically from election/coalition rules; this is not an official fact verification.",
+      "review_status": "auto_reviewed",
+      "confidence_pct": 63,
       "affected_entities": [],
       "coalition_action": "none",
-      "risk_effects": {},
+      "risk_effects": {
+        "gaza_feasibility": 5,
+        "jerusalem_feasibility": 5
+      },
       "entity_updates": []
     },
     {
@@ -399,14 +402,17 @@
       "title": "Gaza Surgeon Returns to the Operating Room After Detention, Determined to Heal What War Has Broken",
       "url": "https://english.pnn.ps/news/48239",
       "published_at": "Wed, 19 Aug 2026 10:18:00 +0300",
-      "category": "general",
-      "impact_score": 0,
-      "summary": "Headline captured from a public feed. Human review is required before it affects model risk.",
-      "review_status": "unreviewed",
-      "confidence_pct": 0,
+      "category": "access",
+      "impact_score": 3.1,
+      "summary": "Headline classified automatically from election/coalition rules; this is not an official fact verification.",
+      "review_status": "auto_reviewed",
+      "confidence_pct": 63,
       "affected_entities": [],
       "coalition_action": "none",
-      "risk_effects": {},
+      "risk_effects": {
+        "gaza_feasibility": 5,
+        "jerusalem_feasibility": 0
+      },
       "entity_updates": []
     },
     {
@@ -415,14 +421,17 @@
       "title": "Women’s Untold Stories:The Private life Behind Two and a Half Years of War and Genocide",
       "url": "https://english.pnn.ps/news/48234",
       "published_at": "Thu, 13 Aug 2026 11:19:00 +0300",
-      "category": "general",
-      "impact_score": 0,
-      "summary": "Headline captured from a public feed. Human review is required before it affects model risk.",
-      "review_status": "unreviewed",
-      "confidence_pct": 0,
+      "category": "access",
+      "impact_score": 3.1,
+      "summary": "Headline classified automatically from election/coalition rules; this is not an official fact verification.",
+      "review_status": "auto_reviewed",
+      "confidence_pct": 63,
       "affected_entities": [],
       "coalition_action": "none",
-      "risk_effects": {},
+      "risk_effects": {
+        "gaza_feasibility": 5,
+        "jerusalem_feasibility": 0
+      },
       "entity_updates": []
     },
     {
@@ -431,15 +440,19 @@
       "title": "Palestinian church official urges global Christian leaders to act over attacks on Christians",
       "url": "https://english.pnn.ps/news/48232",
       "published_at": "Tue, 11 Aug 2026 09:32:00 +0300",
-      "category": "general",
-      "impact_score": 0,
-      "summary": "Headline captured from a public feed. Human review is required before it affects model risk.",
-      "review_status": "unreviewed",
-      "confidence_pct": 0,
+      "category": "coalition",
+      "impact_score": 4.5,
+      "summary": "Headline classified automatically from election/coalition rules; this is not an official fact verification.",
+      "review_status": "auto_reviewed",
+      "confidence_pct": 75,
       "affected_entities": [],
-      "coalition_action": "none",
-      "risk_effects": {},
-      "entity_updates": []
+      "coalition_action": "join",
+      "risk_effects": {
+        "coalition_probability": 6
+      },
+      "entity_updates": [
+        "Automatic signal: entities may be joining or consolidating a coalition."
+      ]
     },
     {
       "source": "Palestine News Network",
@@ -447,14 +460,16 @@
       "title": "The Tourism Crisis in Bethlehem… It Is Not Caused by the Occupation Alone by Alice Kisiya",
       "url": "https://english.pnn.ps/news/48229",
       "published_at": "Wed, 05 Aug 2026 17:39:00 +0300",
-      "category": "general",
-      "impact_score": 0,
-      "summary": "Headline captured from a public feed. Human review is required before it affects model risk.",
-      "review_status": "unreviewed",
-      "confidence_pct": 0,
+      "category": "official",
+      "impact_score": 0.0,
+      "summary": "Headline classified automatically from election/coalition rules; this is not an official fact verification.",
+      "review_status": "auto_reviewed",
+      "confidence_pct": 60,
       "affected_entities": [],
       "coalition_action": "none",
-      "risk_effects": {},
+      "risk_effects": {
+        "election_delay": 0
+      },
       "entity_updates": []
     }
   ],
