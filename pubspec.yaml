@@ -1,0 +1,35 @@
+name: palestine_election_tracker
+description: "Election tracking and scenario modeling for the Palestinian Legislative Council election."
+publish_to: 'none'
+version: 1.0.0+1
+
+environment:
+  sdk: '>=3.0.0 <4.0.0'
+
+dependencies:
+  flutter:
+    sdk: flutter
+  flutter_localizations:
+    sdk: flutter
+  http: ^1.2.0
+  fl_chart: ^0.68.0
+  shared_preferences: ^2.2.2
+  workmanager: ^0.10.9
+  url_launcher: ^6.3.1
+  intl: ^0.20.2
+  pdf: ^3.11.1
+  printing: ^5.13.4
+  arabic_reshaper: ^0.0.1
+  cupertino_icons: ^1.0.6
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^4.0.0
+
+flutter:
+  uses-material-design: true
+  assets:
+    - assets/data/seed_data.json
+    - assets/fonts/Arial.ttf
+    - assets/fonts/Arial-Bold.ttf

@@ -1,0 +1,273 @@
+{
+  "meta": {
+    "generated_at": "2026-08-20T08:00:00Z",
+    "election_date": "2026-11-28",
+    "note": "Seed data bundled with the app. The app will overwrite this with fetched_data.json from DATA_URL if reachable, but always falls back to this if the network call fails."
+  },
+  "unresolved_conditions": [
+    "Gaza Strip voting feasibility (infrastructure and registry damage from the war)",
+    "East Jerusalem voting permission from Israel (caused the 2021 cancellation)",
+    "Final shape of the Hamas-aligned coalition list (Hamas, PIJ, PFLP, National Initiative, Dahlan's Democratic Reform)"
+  ],
+  "historical_result_2006": {
+    "fatah_pct": 41.43,
+    "hamas_pct": 44.45,
+    "other_pct": 14.12,
+    "turnout_pct": 71.18,
+    "source": "Central Elections Commission, 25 Jan 2006"
+  },
+  "local_elections_2026": {
+    "date": "2026-04-25",
+    "national_turnout_pct": 53,
+    "west_bank_turnout_pct": 56,
+    "gaza_deir_al_balah_turnout_pct": 23,
+    "note": "Hamas boycotted these local elections; treat as turnout/regional context, not a Fatah-vs-Hamas comparison."
+  },
+  "latest_national_poll": {
+    "source": "PCPSR Poll #97",
+    "source_url": "https://pcpsr.org/en/node/1014",
+    "date_range": "2026-08-05 to 2026-08-08",
+    "sample_size": 1270,
+    "margin_of_error_pct": 3.5,
+    "likely_turnout_pct": 66,
+    "fatah_pct": 32,
+    "hamas_pct": 29,
+    "third_parties_pct": 18,
+    "undecided_pct": 21,
+    "other_undecided_pct": 39,
+    "gaza_subsample": {
+      "fatah_pct": 30,
+      "hamas_pct": 34,
+      "third_parties_pct": 27,
+      "undecided_pct": 10,
+      "other_undecided_pct": 37
+    },
+    "west_bank_subsample": {
+      "fatah_pct": 34,
+      "hamas_pct": 25,
+      "third_parties_pct": 10,
+      "undecided_pct": 32,
+      "other_undecided_pct": 42
+    }
+  },
+  "tracked_contenders": [
+    {
+      "name": "Fatah",
+      "status": "primary contender",
+      "poll_treatment": "standalone national poll estimate",
+      "notes": "Shown separately where the latest poll asks about Fatah.",
+      "sources": ["PCPSR Poll #97"]
+    },
+    {
+      "name": "Hamas / potential coalition",
+      "status": "primary contender under formation",
+      "poll_treatment": "Hamas standalone poll estimate; coalition transfer is scenario-only",
+      "notes": "A joint list is not yet a certified electoral list. Coalition arithmetic is an assumption, not a measured vote share.",
+      "sources": ["PCPSR Poll #97", "Coalition reporting"]
+    },
+    {
+      "name": "Fatah - Democratic Reform Bloc",
+      "status": "major tracked contender",
+      "poll_treatment": "included inside third parties unless a poll reports it separately",
+      "notes": "The bloc may run alone or join a broader list. The current poll does not provide a standalone percentage, so the app must not invent one.",
+      "sources": ["i24NEWS 2026-08-09", "Coalition reporting"]
+    },
+    {
+      "name": "Other lists and independents",
+      "status": "tracked field",
+      "poll_treatment": "third parties and undecided aggregate",
+      "notes": "Includes possible PLO, reformist and local lists until registration and polling identify them separately.",
+      "sources": ["CEC 2026 timeline", "PCPSR Poll #97"]
+    }
+  ],
+  "confidence_to_represent_trend": [
+    { "period": "~Oct 2025", "hamas_pct": 35, "fatah_pct": null },
+    { "period": "Aug 2026", "hamas_pct": 24, "fatah_pct": 24 }
+  ],
+  "prospective_lists": [
+    {
+      "name": "Fatah",
+      "status": "expected",
+      "alignment": "Fatah / Palestinian Authority establishment",
+      "leader": "Mahmoud Abbas / Fatah leadership",
+      "related_parties": ["Fatah"],
+      "notes": "Expected to run, but official candidate list details are not available until the CEC nomination period.",
+      "sources": ["CEC 2026 timeline", "ECFR Mapping Palestinian Politics"]
+    },
+    {
+      "name": "Hamas-led broad coalition",
+      "status": "reported talks",
+      "alignment": "Anti-Fatah coalition under discussion",
+      "leader": "TBD",
+      "related_parties": ["Hamas", "PIJ", "PFLP", "Palestinian National Initiative", "Fatah - Democratic Reform Bloc"],
+      "notes": "Public reporting says Hamas is exploring a broad list with Islamic Jihad, left factions, the Palestinian National Initiative, and Mohammed Dahlan's bloc. This is not yet a finalized CEC list.",
+      "sources": ["Al Jazeera 2026-08-19", "Yeni Safak 2026-08-13"]
+    },
+    {
+      "name": "Fatah - Democratic Reform Bloc",
+      "status": "expected / reorganizing",
+      "alignment": "Dahlan-aligned breakaway Fatah current",
+      "leader": "Mohammed Dahlan",
+      "related_parties": ["Fatah dissidents", "Democratic Reform Bloc"],
+      "notes": "Reportedly reorganizing ahead of the legislative election and may run alone or as part of a broader anti-Fatah list.",
+      "sources": ["i24NEWS 2026-08-09"],
+      "candidates": [
+        {
+          "name": "Mohammed Dahlan",
+          "status": "reported political figure, not official candidate",
+          "origin": "Not yet verified in the election dataset",
+          "locality_type": "unknown",
+          "geographic_signal": "No verified city or village support signal yet",
+          "role": "Democratic Reform Bloc leader reference",
+          "profession": "Political leader",
+          "public_profile": "High profile in reporting; fame is tracked separately from vote evidence",
+          "electoral_base": "Dahlan-aligned Fatah current; geographic strength not yet modeled",
+          "vote_estimate_pct": null,
+          "estimate_basis": "No candidate-level poll or official list",
+          "sources": ["i24NEWS 2026-08-09"]
+        }
+      ]
+    },
+    {
+      "name": "Popular Front for the Liberation of Palestine",
+      "status": "possible / reported in coalition talks",
+      "alignment": "Left / PLO faction",
+      "leader": "Ahmad Sa'adat",
+      "related_parties": ["PFLP"],
+      "notes": "Historically ran independently; current public reporting links it to broad coalition talks.",
+      "sources": ["Al Jazeera 2026-08-19", "ECFR Mapping Palestinian Politics"],
+      "candidates": [
+        {
+          "name": "Ahmad Sa'adat",
+          "status": "reported coalition participant, not official candidate",
+          "origin": "Not yet verified in the election dataset",
+          "locality_type": "unknown",
+          "geographic_signal": "No verified city or village support signal yet",
+          "role": "PFLP leadership reference",
+          "profession": "Political leader",
+          "public_profile": "Known national political figure; candidate-level support is unknown",
+          "electoral_base": "PFLP historical constituency; current geographic reach not modeled",
+          "vote_estimate_pct": null,
+          "estimate_basis": "No candidate-level poll or official list",
+          "sources": ["Al Jazeera 2026-08-19", "ECFR Mapping Palestinian Politics"]
+        }
+      ]
+    },
+    {
+      "name": "Palestinian National Initiative",
+      "status": "possible / reported in coalition talks",
+      "alignment": "Left / reformist nationalist",
+      "leader": "Mustafa Barghouti",
+      "related_parties": ["PNI"],
+      "notes": "Historically ran independently; current public reporting links it to broad coalition talks.",
+      "sources": ["Al Jazeera 2026-08-19", "ECFR Mapping Palestinian Politics"],
+      "candidates": [
+        {
+          "name": "Mustafa Barghouti",
+          "status": "reported coalition participant, not official candidate",
+          "origin": "Not yet verified in the election dataset",
+          "locality_type": "unknown",
+          "geographic_signal": "No verified city or village support signal yet",
+          "role": "Palestinian National Initiative leadership reference",
+          "profession": "Political leader and physician",
+          "public_profile": "Recognized reformist figure; candidate-level support is unknown",
+          "electoral_base": "PNI reformist constituency; current geographic reach not modeled",
+          "vote_estimate_pct": null,
+          "estimate_basis": "No candidate-level poll or official list",
+          "sources": ["Al Jazeera 2026-08-19", "ECFR Mapping Palestinian Politics"]
+        }
+      ]
+    },
+    {
+      "name": "Democratic Front for the Liberation of Palestine",
+      "status": "possible",
+      "alignment": "Left / PLO faction",
+      "leader": "Nayef Hawatmeh",
+      "related_parties": ["DFLP"],
+      "notes": "A historic PLC participant; official 2026 list status remains pending.",
+      "sources": ["ECFR Mapping Palestinian Politics"]
+    },
+    {
+      "name": "Palestinian People's Party",
+      "status": "possible",
+      "alignment": "Left / PLO faction",
+      "leader": "Bassam Al-Salhi",
+      "related_parties": ["PPP"],
+      "notes": "A historic PLC participant; official 2026 list status remains pending.",
+      "sources": ["ECFR Mapping Palestinian Politics"]
+    },
+    {
+      "name": "Third Way",
+      "status": "possible",
+      "alignment": "Centrist / reformist",
+      "leader": "Salam Fayyad",
+      "related_parties": ["Third Way"],
+      "notes": "A previous PLC list; official 2026 list status remains pending.",
+      "sources": ["ECFR Mapping Palestinian Politics"]
+    },
+    {
+      "name": "Independent local lists",
+      "status": "expected",
+      "alignment": "Independent / local notables",
+      "leader": "TBD",
+      "related_parties": ["Independents"],
+      "notes": "Independent lists are likely under the electoral-list framework, but names will only become reliable during the formal nomination period.",
+      "sources": ["CEC 2026 timeline"]
+    }
+  ],
+  "coalition_reporting": {
+    "as_of": "2026-08-19",
+    "status": "reported talks - not finalized",
+    "participants": ["Hamas", "PIJ", "PFLP", "Palestinian National Initiative", "Democratic Reform Bloc"],
+    "summary": "Hamas has held meetings with PIJ, PFLP, the National Initiative, and Mohammed Dahlan's Democratic Reform bloc to explore a joint anti-Fatah list. Dahlan's faction has confirmed participation. Not yet finalized.",
+    "sources": ["Al Jazeera", "i24NEWS", "Ynet"]
+  },
+  "public_sources": [
+    {
+      "name": "WAFA",
+      "type": "Palestinian news agency",
+      "url": "https://english.wafa.ps/",
+      "feed_url": "https://english.wafa.ps/rss.aspx",
+      "news_category": "official",
+      "use_for": "Official statements, CEC updates, government and party announcements"
+    },
+    {
+      "name": "Ma'an News",
+      "type": "Palestinian independent outlet",
+      "url": "https://www.maannews.net/",
+      "use_for": "Local reporting from the West Bank and Gaza, with Arabic-first coverage"
+    },
+    {
+      "name": "Al-Quds",
+      "type": "Palestinian newspaper",
+      "url": "https://www.alquds.com/",
+      "use_for": "Palestinian political reporting and local election coverage"
+    },
+    {
+      "name": "Palestine News Network",
+      "type": "Palestinian news network",
+      "url": "https://english.pnn.ps/",
+      "feed_url": "https://english.pnn.ps/feed/",
+      "news_category": "general",
+      "use_for": "West Bank field reporting, civic affairs and political developments"
+    },
+    {
+      "name": "Palestine Chronicle",
+      "type": "Palestinian affairs outlet",
+      "url": "https://www.palestinechronicle.com/",
+      "use_for": "Analysis and regional context; not used alone for polling or official facts"
+    },
+    {
+      "name": "PCPSR",
+      "type": "Palestinian polling center",
+      "url": "https://pcpsr.org/en",
+      "use_for": "Polling inputs and public-opinion methodology"
+    },
+    {
+      "name": "Central Elections Commission",
+      "type": "Official election authority",
+      "url": "https://www.elections.ps/",
+      "use_for": "Election dates, registration, procedures and certified results"
+    }
+  ]
+}
