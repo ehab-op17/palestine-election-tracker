@@ -1,6 +1,6 @@
 {
   "meta": {
-    "generated_at": "2026-08-22T08:37:05.412100+00:00",
+    "generated_at": "2026-08-22T09:32:37.316088+00:00",
     "election_date": "2026-11-28",
     "note": "Seed data bundled with the app. The app will overwrite this with fetched_data.json from DATA_URL if reachable, but always falls back to this if the network call fails."
   },
@@ -380,6 +380,25 @@
     {
       "source": "Palestine News Network",
       "source_type": "Palestinian news network",
+      "title": "When Trauma Has No “After”: Gaza Journalists Struggle to Keep Reporting",
+      "url": "https://english.pnn.ps/news/48247",
+      "published_at": "Mon, 17 Aug 2026 11:31:00 +0300",
+      "category": "access",
+      "impact_score": 3.1,
+      "summary": "Headline classified automatically from election/coalition rules; this is not an official fact verification.",
+      "review_status": "auto_reviewed",
+      "confidence_pct": 63,
+      "affected_entities": [],
+      "coalition_action": "none",
+      "risk_effects": {
+        "gaza_feasibility": 5,
+        "jerusalem_feasibility": 0
+      },
+      "entity_updates": []
+    },
+    {
+      "source": "Palestine News Network",
+      "source_type": "Palestinian news network",
       "title": "The CEC Announces an Increase in the percentage of Registrants in the West Bank to 87.2%",
       "url": "https://english.pnn.ps/news/48243",
       "published_at": "Thu, 20 Aug 2026 12:08:00 +0300",
@@ -453,24 +472,6 @@
       "entity_updates": [
         "Automatic signal: entities may be joining or consolidating a coalition."
       ]
-    },
-    {
-      "source": "Palestine News Network",
-      "source_type": "Palestinian news network",
-      "title": "The Tourism Crisis in Bethlehem… It Is Not Caused by the Occupation Alone by Alice Kisiya",
-      "url": "https://english.pnn.ps/news/48229",
-      "published_at": "Wed, 05 Aug 2026 17:39:00 +0300",
-      "category": "official",
-      "impact_score": 0.0,
-      "summary": "Headline classified automatically from election/coalition rules; this is not an official fact verification.",
-      "review_status": "auto_reviewed",
-      "confidence_pct": 60,
-      "affected_entities": [],
-      "coalition_action": "none",
-      "risk_effects": {
-        "election_delay": 0
-      },
-      "entity_updates": []
     }
   ],
   "data_quality": {
