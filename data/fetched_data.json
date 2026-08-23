@@ -1,6 +1,6 @@
 {
   "meta": {
-    "generated_at": "2026-08-23T11:50:18.362179+00:00",
+    "generated_at": "2026-08-23T12:51:56.994138+00:00",
     "election_date": "2026-11-28",
     "note": "Seed data bundled with the app. The app will overwrite this with fetched_data.json from DATA_URL if reachable, but always falls back to this if the network call fails."
   },
@@ -421,25 +421,6 @@
       "title": "Gaza Surgeon Returns to the Operating Room After Detention, Determined to Heal What War Has Broken",
       "url": "https://english.pnn.ps/news/48239",
       "published_at": "Wed, 19 Aug 2026 10:18:00 +0300",
-      "category": "access",
-      "impact_score": 3.1,
-      "summary": "Headline classified automatically from election/coalition rules; this is not an official fact verification.",
-      "review_status": "auto_reviewed",
-      "confidence_pct": 63,
-      "affected_entities": [],
-      "coalition_action": "none",
-      "risk_effects": {
-        "gaza_feasibility": 5,
-        "jerusalem_feasibility": 0
-      },
-      "entity_updates": []
-    },
-    {
-      "source": "Palestine News Network",
-      "source_type": "Palestinian news network",
-      "title": "Women’s Untold Stories:The Private life Behind Two and a Half Years of War and Genocide",
-      "url": "https://english.pnn.ps/news/48234",
-      "published_at": "Thu, 13 Aug 2026 11:19:00 +0300",
       "category": "access",
       "impact_score": 3.1,
       "summary": "Headline classified automatically from election/coalition rules; this is not an official fact verification.",
