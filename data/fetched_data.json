@@ -1,6 +1,6 @@
 {
   "meta": {
-    "generated_at": "2026-08-25T07:03:26.480548+00:00",
+    "generated_at": "2026-08-25T08:09:51.323643+00:00",
     "election_date": "2026-11-28",
     "note": "Seed data bundled with the app. The app will overwrite this with fetched_data.json from DATA_URL if reachable, but always falls back to this if the network call fails."
   },
@@ -380,6 +380,25 @@
     {
       "source": "Palestine News Network",
       "source_type": "Palestinian news network",
+      "title": "Dr. Hamdallah emphasizes conducting the Legislative Elections as scheduled",
+      "url": "https://english.pnn.ps/news/48259",
+      "published_at": "Tue, 25 Aug 2026 10:53:00 +0300",
+      "category": "access",
+      "impact_score": 3.1,
+      "summary": "Headline classified automatically from election/coalition rules; this is not an official fact verification.",
+      "review_status": "auto_reviewed",
+      "confidence_pct": 63,
+      "affected_entities": [],
+      "coalition_action": "none",
+      "risk_effects": {
+        "gaza_feasibility": 5,
+        "jerusalem_feasibility": 0
+      },
+      "entity_updates": []
+    },
+    {
+      "source": "Palestine News Network",
+      "source_type": "Palestinian news network",
       "title": "When Trauma Has No “After”: Gaza Journalists Struggle to Keep Reporting",
       "url": "https://english.pnn.ps/news/48247",
       "published_at": "Mon, 17 Aug 2026 11:31:00 +0300",
@@ -412,25 +431,6 @@
       "risk_effects": {
         "gaza_feasibility": 5,
         "jerusalem_feasibility": 5
-      },
-      "entity_updates": []
-    },
-    {
-      "source": "Palestine News Network",
-      "source_type": "Palestinian news network",
-      "title": "Gaza Surgeon Returns to the Operating Room After Detention, Determined to Heal What War Has Broken",
-      "url": "https://english.pnn.ps/news/48239",
-      "published_at": "Wed, 19 Aug 2026 10:18:00 +0300",
-      "category": "access",
-      "impact_score": 3.1,
-      "summary": "Headline classified automatically from election/coalition rules; this is not an official fact verification.",
-      "review_status": "auto_reviewed",
-      "confidence_pct": 63,
-      "affected_entities": [],
-      "coalition_action": "none",
-      "risk_effects": {
-        "gaza_feasibility": 5,
-        "jerusalem_feasibility": 0
       },
       "entity_updates": []
     }
