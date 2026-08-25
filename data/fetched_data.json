@@ -1,6 +1,6 @@
 {
   "meta": {
-    "generated_at": "2026-08-25T16:09:53.064564+00:00",
+    "generated_at": "2026-08-25T17:06:41.929470+00:00",
     "election_date": "2026-11-28",
     "note": "Seed data bundled with the app. The app will overwrite this with fetched_data.json from DATA_URL if reachable, but always falls back to this if the network call fails."
   },
@@ -380,6 +380,25 @@
     {
       "source": "Palestine News Network",
       "source_type": "Palestinian news network",
+      "title": "Palestinian agronomist pioneers local blueberry cultivation in northern West",
+      "url": "https://english.pnn.ps/news/48263",
+      "published_at": "Tue, 25 Aug 2026 19:40:00 +0300",
+      "category": "access",
+      "impact_score": 0.0,
+      "summary": "Headline classified automatically from election/coalition rules; this is not an official fact verification.",
+      "review_status": "auto_reviewed",
+      "confidence_pct": 63,
+      "affected_entities": [],
+      "coalition_action": "none",
+      "risk_effects": {
+        "gaza_feasibility": 0,
+        "jerusalem_feasibility": 0
+      },
+      "entity_updates": []
+    },
+    {
+      "source": "Palestine News Network",
+      "source_type": "Palestinian news network",
       "title": "When Medicine Runs Out, a Gaza Veterinarian Keeps Giving Animals a Chance to Live : Watch",
       "url": "https://english.pnn.ps/news/48260",
       "published_at": "Tue, 25 Aug 2026 15:43:00 +0300",
@@ -431,25 +450,6 @@
       "risk_effects": {
         "gaza_feasibility": 5,
         "jerusalem_feasibility": 0
-      },
-      "entity_updates": []
-    },
-    {
-      "source": "Palestine News Network",
-      "source_type": "Palestinian news network",
-      "title": "The CEC Announces an Increase in the percentage of Registrants in the West Bank to 87.2%",
-      "url": "https://english.pnn.ps/news/48243",
-      "published_at": "Thu, 20 Aug 2026 12:08:00 +0300",
-      "category": "access",
-      "impact_score": 3.1,
-      "summary": "Headline classified automatically from election/coalition rules; this is not an official fact verification.",
-      "review_status": "auto_reviewed",
-      "confidence_pct": 63,
-      "affected_entities": [],
-      "coalition_action": "none",
-      "risk_effects": {
-        "gaza_feasibility": 5,
-        "jerusalem_feasibility": 5
       },
       "entity_updates": []
     }
