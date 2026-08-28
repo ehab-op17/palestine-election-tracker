@@ -1,6 +1,6 @@
 {
   "meta": {
-    "generated_at": "2026-08-27T21:06:59.087007+00:00",
+    "generated_at": "2026-08-28T05:34:29.660245+00:00",
     "election_date": "2026-11-28",
     "note": "Seed data bundled with the app. The app will overwrite this with fetched_data.json from DATA_URL if reachable, but always falls back to this if the network call fails."
   },
