@@ -1,6 +1,6 @@
 {
   "meta": {
-    "generated_at": "2026-09-06T09:19:47.588515+00:00",
+    "generated_at": "2026-09-06T13:03:48.773783+00:00",
     "election_date": "2026-11-28",
     "note": "Seed data bundled with the app. The app will overwrite this with fetched_data.json from DATA_URL if reachable, but always falls back to this if the network call fails."
   },
@@ -380,6 +380,57 @@
     {
       "source": "Palestine News Network",
       "source_type": "Palestinian news network",
+      "title": "PNN Accountability Examines Palestinian Heritage in Battir and Fuel Sector Challenges",
+      "url": "https://english.pnn.ps/news/48287",
+      "published_at": "Sun, 06 Sep 2026 14:45:00 +0300",
+      "category": "general",
+      "impact_score": 0.0,
+      "summary": "Headline classified automatically from election/coalition rules; this is not an official fact verification.",
+      "review_status": "auto_reviewed",
+      "confidence_pct": 55,
+      "affected_entities": [],
+      "coalition_action": "none",
+      "risk_effects": {},
+      "entity_updates": []
+    },
+    {
+      "source": "Palestine News Network",
+      "source_type": "Palestinian news network",
+      "title": "PNN Accountability: Palestinian Women and Livestock Targeted Amid Expanding Settler Pressure",
+      "url": "https://english.pnn.ps/news/48285",
+      "published_at": "Sun, 06 Sep 2026 14:38:00 +0300",
+      "category": "general",
+      "impact_score": 0.0,
+      "summary": "Headline classified automatically from election/coalition rules; this is not an official fact verification.",
+      "review_status": "auto_reviewed",
+      "confidence_pct": 55,
+      "affected_entities": [],
+      "coalition_action": "none",
+      "risk_effects": {},
+      "entity_updates": []
+    },
+    {
+      "source": "Palestine News Network",
+      "source_type": "Palestinian news network",
+      "title": "PNN Accountability: A New TV Program on Citizens’ Concerns — Watch the First Episode",
+      "url": "https://english.pnn.ps/news/48284",
+      "published_at": "Sun, 06 Sep 2026 14:34:00 +0300",
+      "category": "access",
+      "impact_score": 0.0,
+      "summary": "Headline classified automatically from election/coalition rules; this is not an official fact verification.",
+      "review_status": "auto_reviewed",
+      "confidence_pct": 63,
+      "affected_entities": [],
+      "coalition_action": "none",
+      "risk_effects": {
+        "gaza_feasibility": 0,
+        "jerusalem_feasibility": 0
+      },
+      "entity_updates": []
+    },
+    {
+      "source": "Palestine News Network",
+      "source_type": "Palestinian news network",
       "title": "Israeli settler violence in Turmus Ayya during Huckabee visit",
       "url": "https://english.pnn.ps/news/48278",
       "published_at": "Sat, 05 Sep 2026 12:26:00 +0300",
@@ -412,63 +463,6 @@
       "affected_entities": [],
       "coalition_action": "none",
       "risk_effects": {},
-      "entity_updates": []
-    },
-    {
-      "source": "Palestine News Network",
-      "source_type": "Palestinian news network",
-      "title": "Bethlehem man appeals for help to support three children with special needs amid health and financial hardship",
-      "url": "https://english.pnn.ps/news/48266",
-      "published_at": "Wed, 26 Aug 2026 22:20:00 +0300",
-      "category": "access",
-      "impact_score": 3.1,
-      "summary": "Headline classified automatically from election/coalition rules; this is not an official fact verification.",
-      "review_status": "auto_reviewed",
-      "confidence_pct": 63,
-      "affected_entities": [],
-      "coalition_action": "none",
-      "risk_effects": {
-        "gaza_feasibility": 0,
-        "jerusalem_feasibility": 5
-      },
-      "entity_updates": []
-    },
-    {
-      "source": "Palestine News Network",
-      "source_type": "Palestinian news network",
-      "title": "Palestinian agronomist pioneers local blueberry cultivation in northern West",
-      "url": "https://english.pnn.ps/news/48263",
-      "published_at": "Tue, 25 Aug 2026 19:40:00 +0300",
-      "category": "access",
-      "impact_score": 0.0,
-      "summary": "Headline classified automatically from election/coalition rules; this is not an official fact verification.",
-      "review_status": "auto_reviewed",
-      "confidence_pct": 63,
-      "affected_entities": [],
-      "coalition_action": "none",
-      "risk_effects": {
-        "gaza_feasibility": 0,
-        "jerusalem_feasibility": 0
-      },
-      "entity_updates": []
-    },
-    {
-      "source": "Palestine News Network",
-      "source_type": "Palestinian news network",
-      "title": "When Medicine Runs Out, a Gaza Veterinarian Keeps Giving Animals a Chance to Live : Watch",
-      "url": "https://english.pnn.ps/news/48260",
-      "published_at": "Tue, 25 Aug 2026 15:43:00 +0300",
-      "category": "access",
-      "impact_score": 3.1,
-      "summary": "Headline classified automatically from election/coalition rules; this is not an official fact verification.",
-      "review_status": "auto_reviewed",
-      "confidence_pct": 63,
-      "affected_entities": [],
-      "coalition_action": "none",
-      "risk_effects": {
-        "gaza_feasibility": 5,
-        "jerusalem_feasibility": 0
-      },
       "entity_updates": []
     }
   ],
