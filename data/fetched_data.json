@@ -1,6 +1,6 @@
 {
   "meta": {
-    "generated_at": "2026-09-06T13:03:48.773783+00:00",
+    "generated_at": "2026-09-06T16:24:12.008476+00:00",
     "election_date": "2026-11-28",
     "note": "Seed data bundled with the app. The app will overwrite this with fetched_data.json from DATA_URL if reachable, but always falls back to this if the network call fails."
   },
@@ -380,6 +380,45 @@
     {
       "source": "Palestine News Network",
       "source_type": "Palestinian news network",
+      "title": "The CEC and ICHR renew Cooperation for the Protection of Freedoms and Liberties during the Legislative Elections - Centr",
+      "url": "https://english.pnn.ps/news/48289",
+      "published_at": "Sun, 06 Sep 2026 18:09:00 +0300",
+      "category": "coalition",
+      "impact_score": 3.9,
+      "summary": "Headline classified automatically from election/coalition rules; this is not an official fact verification.",
+      "review_status": "auto_reviewed",
+      "confidence_pct": 65,
+      "affected_entities": [],
+      "coalition_action": "uncertain",
+      "risk_effects": {
+        "coalition_probability": 6
+      },
+      "entity_updates": [
+        "Automatic signal: coalition discussions or alignment are reported."
+      ]
+    },
+    {
+      "source": "Palestine News Network",
+      "source_type": "Palestinian news network",
+      "title": "From Rubble to Rhythm: Gaza’s Musicians Rebuild Hope One Note at a Time",
+      "url": "https://english.pnn.ps/news/48288",
+      "published_at": "Sun, 06 Sep 2026 16:52:00 +0300",
+      "category": "access",
+      "impact_score": 3.1,
+      "summary": "Headline classified automatically from election/coalition rules; this is not an official fact verification.",
+      "review_status": "auto_reviewed",
+      "confidence_pct": 63,
+      "affected_entities": [],
+      "coalition_action": "none",
+      "risk_effects": {
+        "gaza_feasibility": 5,
+        "jerusalem_feasibility": 0
+      },
+      "entity_updates": []
+    },
+    {
+      "source": "Palestine News Network",
+      "source_type": "Palestinian news network",
       "title": "PNN Accountability Examines Palestinian Heritage in Battir and Fuel Sector Challenges",
       "url": "https://english.pnn.ps/news/48287",
       "published_at": "Sun, 06 Sep 2026 14:45:00 +0300",
@@ -426,43 +465,6 @@
         "gaza_feasibility": 0,
         "jerusalem_feasibility": 0
       },
-      "entity_updates": []
-    },
-    {
-      "source": "Palestine News Network",
-      "source_type": "Palestinian news network",
-      "title": "Israeli settler violence in Turmus Ayya during Huckabee visit",
-      "url": "https://english.pnn.ps/news/48278",
-      "published_at": "Sat, 05 Sep 2026 12:26:00 +0300",
-      "category": "access",
-      "impact_score": 3.1,
-      "summary": "Headline classified automatically from election/coalition rules; this is not an official fact verification.",
-      "review_status": "auto_reviewed",
-      "confidence_pct": 68,
-      "affected_entities": [
-        "Hamas"
-      ],
-      "coalition_action": "none",
-      "risk_effects": {
-        "gaza_feasibility": 5,
-        "jerusalem_feasibility": 0
-      },
-      "entity_updates": []
-    },
-    {
-      "source": "Palestine News Network",
-      "source_type": "Palestinian news network",
-      "title": "PNN holds journalist safety training amid growing risks to media workers",
-      "url": "https://english.pnn.ps/news/48276",
-      "published_at": "Mon, 31 Aug 2026 10:18:00 +0300",
-      "category": "general",
-      "impact_score": 0.0,
-      "summary": "Headline classified automatically from election/coalition rules; this is not an official fact verification.",
-      "review_status": "auto_reviewed",
-      "confidence_pct": 55,
-      "affected_entities": [],
-      "coalition_action": "none",
-      "risk_effects": {},
       "entity_updates": []
     }
   ],
