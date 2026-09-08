@@ -1,6 +1,6 @@
 {
   "meta": {
-    "generated_at": "2026-09-08T10:00:27.748667+00:00",
+    "generated_at": "2026-09-08T14:43:52.033122+00:00",
     "election_date": "2026-11-28",
     "note": "Seed data bundled with the app. The app will overwrite this with fetched_data.json from DATA_URL if reachable, but always falls back to this if the network call fails."
   },
@@ -380,6 +380,25 @@
     {
       "source": "Palestine News Network",
       "source_type": "Palestinian news network",
+      "title": "Industrial Estates Authority Tour Highlights Bethlehem Industrial Estate’s Growth and Resilience",
+      "url": "https://english.pnn.ps/news/48290",
+      "published_at": "Tue, 08 Sep 2026 16:25:00 +0300",
+      "category": "access",
+      "impact_score": 0.0,
+      "summary": "Headline classified automatically from election/coalition rules; this is not an official fact verification.",
+      "review_status": "auto_reviewed",
+      "confidence_pct": 63,
+      "affected_entities": [],
+      "coalition_action": "none",
+      "risk_effects": {
+        "gaza_feasibility": 0,
+        "jerusalem_feasibility": 0
+      },
+      "entity_updates": []
+    },
+    {
+      "source": "Palestine News Network",
+      "source_type": "Palestinian news network",
       "title": "The CEC and ICHR renew Cooperation for the Protection of Freedoms and Liberties during the Legislative Elections - Centr",
       "url": "https://english.pnn.ps/news/48289",
       "published_at": "Sun, 06 Sep 2026 18:09:00 +0300",
@@ -446,25 +465,6 @@
       "affected_entities": [],
       "coalition_action": "none",
       "risk_effects": {},
-      "entity_updates": []
-    },
-    {
-      "source": "Palestine News Network",
-      "source_type": "Palestinian news network",
-      "title": "PNN Accountability: A New TV Program on Citizens’ Concerns — Watch the First Episode",
-      "url": "https://english.pnn.ps/news/48284",
-      "published_at": "Sun, 06 Sep 2026 14:34:00 +0300",
-      "category": "access",
-      "impact_score": 0.0,
-      "summary": "Headline classified automatically from election/coalition rules; this is not an official fact verification.",
-      "review_status": "auto_reviewed",
-      "confidence_pct": 63,
-      "affected_entities": [],
-      "coalition_action": "none",
-      "risk_effects": {
-        "gaza_feasibility": 0,
-        "jerusalem_feasibility": 0
-      },
       "entity_updates": []
     }
   ],
