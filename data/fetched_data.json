@@ -1,6 +1,6 @@
 {
   "meta": {
-    "generated_at": "2026-09-08T18:26:54.467470+00:00",
+    "generated_at": "2026-09-08T21:21:20.937202+00:00",
     "election_date": "2026-11-28",
     "note": "Seed data bundled with the app. The app will overwrite this with fetched_data.json from DATA_URL if reachable, but always falls back to this if the network call fails."
   },
@@ -380,6 +380,25 @@
     {
       "source": "Palestine News Network",
       "source_type": "Palestinian news network",
+      "title": "Violations surge against Palestinian journalists in August: 84 cases",
+      "url": "https://english.pnn.ps/news/48291",
+      "published_at": "Tue, 08 Sep 2026 22:28:00 +0300",
+      "category": "access",
+      "impact_score": 3.1,
+      "summary": "Headline classified automatically from election/coalition rules; this is not an official fact verification.",
+      "review_status": "auto_reviewed",
+      "confidence_pct": 63,
+      "affected_entities": [],
+      "coalition_action": "none",
+      "risk_effects": {
+        "gaza_feasibility": 5,
+        "jerusalem_feasibility": 0
+      },
+      "entity_updates": []
+    },
+    {
+      "source": "Palestine News Network",
+      "source_type": "Palestinian news network",
       "title": "Industrial Estates Authority Tour Highlights Bethlehem Industrial Estate’s Growth and Resilience",
       "url": "https://english.pnn.ps/news/48290",
       "published_at": "Tue, 08 Sep 2026 16:25:00 +0300",
@@ -441,22 +460,6 @@
       "title": "PNN Accountability Examines Palestinian Heritage in Battir and Fuel Sector Challenges",
       "url": "https://english.pnn.ps/news/48287",
       "published_at": "Sun, 06 Sep 2026 14:45:00 +0300",
-      "category": "general",
-      "impact_score": 0.0,
-      "summary": "Headline classified automatically from election/coalition rules; this is not an official fact verification.",
-      "review_status": "auto_reviewed",
-      "confidence_pct": 55,
-      "affected_entities": [],
-      "coalition_action": "none",
-      "risk_effects": {},
-      "entity_updates": []
-    },
-    {
-      "source": "Palestine News Network",
-      "source_type": "Palestinian news network",
-      "title": "PNN Accountability: Palestinian Women and Livestock Targeted Amid Expanding Settler Pressure",
-      "url": "https://english.pnn.ps/news/48285",
-      "published_at": "Sun, 06 Sep 2026 14:38:00 +0300",
       "category": "general",
       "impact_score": 0.0,
       "summary": "Headline classified automatically from election/coalition rules; this is not an official fact verification.",
