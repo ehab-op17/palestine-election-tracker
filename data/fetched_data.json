@@ -1,6 +1,6 @@
 {
   "meta": {
-    "generated_at": "2026-09-17T15:14:46.561989+00:00",
+    "generated_at": "2026-09-17T19:12:29.628251+00:00",
     "election_date": "2026-11-28",
     "note": "Seed data bundled with the app. The app will overwrite this with fetched_data.json from DATA_URL if reachable, but always falls back to this if the network call fails."
   },
@@ -380,6 +380,28 @@
     {
       "source": "Palestine News Network",
       "source_type": "Palestinian news network",
+      "title": "Palestinian Journalists Syndicate Urges Urgent Medical Evacuations for Injured Gaza Reporters",
+      "url": "https://english.pnn.ps/news/48302",
+      "published_at": "Thu, 17 Sep 2026 19:28:00 +0300",
+      "category": "access",
+      "impact_score": 5.7,
+      "summary": "Headline classified automatically from election/coalition rules; this is not an official fact verification.",
+      "review_status": "auto_reviewed",
+      "confidence_pct": 71,
+      "affected_entities": [],
+      "coalition_action": "none",
+      "risk_effects": {
+        "gaza_feasibility": 5,
+        "jerusalem_feasibility": 0,
+        "election_delay": 8
+      },
+      "entity_updates": [
+        "Automatic signal: election timing may be changing; verify against the official authority."
+      ]
+    },
+    {
+      "source": "Palestine News Network",
+      "source_type": "Palestinian news network",
       "title": "Violations surge against Palestinian journalists in August: 84 cases",
       "url": "https://english.pnn.ps/news/48291",
       "published_at": "Tue, 08 Sep 2026 22:28:00 +0300",
@@ -452,22 +474,6 @@
         "gaza_feasibility": 5,
         "jerusalem_feasibility": 0
       },
-      "entity_updates": []
-    },
-    {
-      "source": "Palestine News Network",
-      "source_type": "Palestinian news network",
-      "title": "PNN Accountability Examines Palestinian Heritage in Battir and Fuel Sector Challenges",
-      "url": "https://english.pnn.ps/news/48287",
-      "published_at": "Sun, 06 Sep 2026 14:45:00 +0300",
-      "category": "general",
-      "impact_score": 0.0,
-      "summary": "Headline classified automatically from election/coalition rules; this is not an official fact verification.",
-      "review_status": "auto_reviewed",
-      "confidence_pct": 55,
-      "affected_entities": [],
-      "coalition_action": "none",
-      "risk_effects": {},
       "entity_updates": []
     }
   ],
