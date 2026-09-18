@@ -1,6 +1,6 @@
 {
   "meta": {
-    "generated_at": "2026-09-18T18:14:56.017916+00:00",
+    "generated_at": "2026-09-18T21:09:33.752095+00:00",
     "election_date": "2026-11-28",
     "note": "Seed data bundled with the app. The app will overwrite this with fetched_data.json from DATA_URL if reachable, but always falls back to this if the network call fails."
   },
@@ -380,6 +380,25 @@
     {
       "source": "Palestine News Network",
       "source_type": "Palestinian news network",
+      "title": "PNN launches “Al-Makshouf” programme highlighting independent media and public accountability in Palestinian society",
+      "url": "https://english.pnn.ps/news/48303",
+      "published_at": "Fri, 18 Sep 2026 22:23:00 +0300",
+      "category": "access",
+      "impact_score": 3.1,
+      "summary": "Headline classified automatically from election/coalition rules; this is not an official fact verification.",
+      "review_status": "auto_reviewed",
+      "confidence_pct": 63,
+      "affected_entities": [],
+      "coalition_action": "none",
+      "risk_effects": {
+        "gaza_feasibility": 5,
+        "jerusalem_feasibility": 0
+      },
+      "entity_updates": []
+    },
+    {
+      "source": "Palestine News Network",
+      "source_type": "Palestinian news network",
       "title": "Palestinian Journalists Syndicate Urges Urgent Medical Evacuations for Injured Gaza Reporters",
       "url": "https://english.pnn.ps/news/48302",
       "published_at": "Thu, 17 Sep 2026 19:28:00 +0300",
@@ -456,25 +475,6 @@
       "entity_updates": [
         "Automatic signal: coalition discussions or alignment are reported."
       ]
-    },
-    {
-      "source": "Palestine News Network",
-      "source_type": "Palestinian news network",
-      "title": "From Rubble to Rhythm: Gaza’s Musicians Rebuild Hope One Note at a Time",
-      "url": "https://english.pnn.ps/news/48288",
-      "published_at": "Sun, 06 Sep 2026 16:52:00 +0300",
-      "category": "access",
-      "impact_score": 3.1,
-      "summary": "Headline classified automatically from election/coalition rules; this is not an official fact verification.",
-      "review_status": "auto_reviewed",
-      "confidence_pct": 63,
-      "affected_entities": [],
-      "coalition_action": "none",
-      "risk_effects": {
-        "gaza_feasibility": 5,
-        "jerusalem_feasibility": 0
-      },
-      "entity_updates": []
     }
   ],
   "data_quality": {
