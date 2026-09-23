@@ -1,6 +1,6 @@
 {
   "meta": {
-    "generated_at": "2026-09-23T18:33:15.770695+00:00",
+    "generated_at": "2026-09-23T22:09:25.832675+00:00",
     "election_date": "2026-11-28",
     "note": "Seed data bundled with the app. The app will overwrite this with fetched_data.json from DATA_URL if reachable, but always falls back to this if the network call fails."
   },
@@ -380,6 +380,28 @@
     {
       "source": "Palestine News Network",
       "source_type": "Palestinian news network",
+      "title": "Cancer Without Treatment in Gaza: Patients Caught Between War and Lost Chances of Survival",
+      "url": "https://english.pnn.ps/news/48307",
+      "published_at": "Wed, 23 Sep 2026 21:46:00 +0300",
+      "category": "access",
+      "impact_score": 5.7,
+      "summary": "Headline classified automatically from election/coalition rules; this is not an official fact verification.",
+      "review_status": "auto_reviewed",
+      "confidence_pct": 71,
+      "affected_entities": [],
+      "coalition_action": "none",
+      "risk_effects": {
+        "gaza_feasibility": 5,
+        "jerusalem_feasibility": 5,
+        "election_delay": 8
+      },
+      "entity_updates": [
+        "Automatic signal: election timing may be changing; verify against the official authority."
+      ]
+    },
+    {
+      "source": "Palestine News Network",
+      "source_type": "Palestinian news network",
       "title": "From Tantura to Naza: History Was Not Falsified, Nor Was Testimony Silenced by Dr Sania El-Husseini",
       "url": "https://english.pnn.ps/news/48305",
       "published_at": "Sat, 19 Sep 2026 11:01:00 +0300",
@@ -452,25 +474,6 @@
       "coalition_action": "none",
       "risk_effects": {
         "gaza_feasibility": 5,
-        "jerusalem_feasibility": 0
-      },
-      "entity_updates": []
-    },
-    {
-      "source": "Palestine News Network",
-      "source_type": "Palestinian news network",
-      "title": "Industrial Estates Authority Tour Highlights Bethlehem Industrial Estate’s Growth and Resilience",
-      "url": "https://english.pnn.ps/news/48290",
-      "published_at": "Tue, 08 Sep 2026 16:25:00 +0300",
-      "category": "access",
-      "impact_score": 0.0,
-      "summary": "Headline classified automatically from election/coalition rules; this is not an official fact verification.",
-      "review_status": "auto_reviewed",
-      "confidence_pct": 63,
-      "affected_entities": [],
-      "coalition_action": "none",
-      "risk_effects": {
-        "gaza_feasibility": 0,
         "jerusalem_feasibility": 0
       },
       "entity_updates": []
