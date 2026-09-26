@@ -1,6 +1,6 @@
 {
   "meta": {
-    "generated_at": "2026-09-26T10:07:50.284510+00:00",
+    "generated_at": "2026-09-26T14:40:48.900742+00:00",
     "election_date": "2026-11-28",
     "note": "Seed data bundled with the app. The app will overwrite this with fetched_data.json from DATA_URL if reachable, but always falls back to this if the network call fails."
   },
@@ -380,6 +380,25 @@
     {
       "source": "Palestine News Network",
       "source_type": "Palestinian news network",
+      "title": "The CEC: Commencing the Nomination Stage of the 2026 Legislative Elections",
+      "url": "https://english.pnn.ps/news/48315",
+      "published_at": "Sat, 26 Sep 2026 13:44:00 +0300",
+      "category": "access",
+      "impact_score": 3.1,
+      "summary": "Headline classified automatically from election/coalition rules; this is not an official fact verification.",
+      "review_status": "auto_reviewed",
+      "confidence_pct": 63,
+      "affected_entities": [],
+      "coalition_action": "none",
+      "risk_effects": {
+        "gaza_feasibility": 5,
+        "jerusalem_feasibility": 0
+      },
+      "entity_updates": []
+    },
+    {
+      "source": "Palestine News Network",
+      "source_type": "Palestinian news network",
       "title": "PNN’s “Ala Al-Makshouf” Examines the Future of Sports in Gaza",
       "url": "https://english.pnn.ps/news/48314",
       "published_at": "Sat, 26 Sep 2026 10:23:00 +0300",
@@ -446,28 +465,6 @@
       "coalition_action": "none",
       "risk_effects": {},
       "entity_updates": []
-    },
-    {
-      "source": "Palestine News Network",
-      "source_type": "Palestinian news network",
-      "title": "Cancer Without Treatment in Gaza: Patients Caught Between War and Lost Chances of Survival",
-      "url": "https://english.pnn.ps/news/48307",
-      "published_at": "Wed, 23 Sep 2026 21:46:00 +0300",
-      "category": "access",
-      "impact_score": 5.7,
-      "summary": "Headline classified automatically from election/coalition rules; this is not an official fact verification.",
-      "review_status": "auto_reviewed",
-      "confidence_pct": 71,
-      "affected_entities": [],
-      "coalition_action": "none",
-      "risk_effects": {
-        "gaza_feasibility": 5,
-        "jerusalem_feasibility": 5,
-        "election_delay": 8
-      },
-      "entity_updates": [
-        "Automatic signal: election timing may be changing; verify against the official authority."
-      ]
     }
   ],
   "data_quality": {
