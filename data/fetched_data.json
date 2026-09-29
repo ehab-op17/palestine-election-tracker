@@ -1,6 +1,6 @@
 {
   "meta": {
-    "generated_at": "2026-09-29T15:39:26.216414+00:00",
+    "generated_at": "2026-09-29T20:37:27.240244+00:00",
     "election_date": "2026-11-28",
     "note": "Seed data bundled with the app. The app will overwrite this with fetched_data.json from DATA_URL if reachable, but always falls back to this if the network call fails."
   },
@@ -380,6 +380,25 @@
     {
       "source": "Palestine News Network",
       "source_type": "Palestinian news network",
+      "title": "UK rejects and suspends over 80 export licenses to Israel Paragraph                                          Show the n",
+      "url": "https://english.pnn.ps/news/48324",
+      "published_at": "Tue, 29 Sep 2026 18:50:00 +0300",
+      "category": "access",
+      "impact_score": 3.1,
+      "summary": "Headline classified automatically from election/coalition rules; this is not an official fact verification.",
+      "review_status": "auto_reviewed",
+      "confidence_pct": 63,
+      "affected_entities": [],
+      "coalition_action": "none",
+      "risk_effects": {
+        "gaza_feasibility": 5,
+        "jerusalem_feasibility": 0
+      },
+      "entity_updates": []
+    },
+    {
+      "source": "Palestine News Network",
+      "source_type": "Palestinian news network",
       "title": "The CEC: Commencing the Nomination Stage of the 2026 Legislative Elections",
       "url": "https://english.pnn.ps/news/48315",
       "published_at": "Sat, 26 Sep 2026 13:44:00 +0300",
@@ -448,22 +467,6 @@
         "gaza_feasibility": 5,
         "jerusalem_feasibility": 0
       },
-      "entity_updates": []
-    },
-    {
-      "source": "Palestine News Network",
-      "source_type": "Palestinian news network",
-      "title": "When Night Falls in Masafer Yatta, Palestinians Take Turns Keeping Watch",
-      "url": "https://english.pnn.ps/news/48311",
-      "published_at": "Sat, 26 Sep 2026 09:33:00 +0300",
-      "category": "general",
-      "impact_score": 0.0,
-      "summary": "Headline classified automatically from election/coalition rules; this is not an official fact verification.",
-      "review_status": "auto_reviewed",
-      "confidence_pct": 55,
-      "affected_entities": [],
-      "coalition_action": "none",
-      "risk_effects": {},
       "entity_updates": []
     }
   ],
