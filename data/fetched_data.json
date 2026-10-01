@@ -1,6 +1,6 @@
 {
   "meta": {
-    "generated_at": "2026-10-01T08:43:12.442142+00:00",
+    "generated_at": "2026-10-01T16:13:46.681431+00:00",
     "election_date": "2026-11-28",
     "note": "Seed data bundled with the app. The app will overwrite this with fetched_data.json from DATA_URL if reachable, but always falls back to this if the network call fails."
   },
@@ -380,6 +380,25 @@
     {
       "source": "Palestine News Network",
       "source_type": "Palestinian news network",
+      "title": "From Handmade in Palestine to the World: Women Entrepreneurs Turn Craft into Opportunity",
+      "url": "https://english.pnn.ps/news/48327",
+      "published_at": "Thu, 01 Oct 2026 15:25:00 +0300",
+      "category": "access",
+      "impact_score": 0.0,
+      "summary": "Headline classified automatically from election/coalition rules; this is not an official fact verification.",
+      "review_status": "auto_reviewed",
+      "confidence_pct": 63,
+      "affected_entities": [],
+      "coalition_action": "none",
+      "risk_effects": {
+        "gaza_feasibility": 0,
+        "jerusalem_feasibility": 0
+      },
+      "entity_updates": []
+    },
+    {
+      "source": "Palestine News Network",
+      "source_type": "Palestinian news network",
       "title": "UK rejects and suspends over 80 export licenses to Israel Paragraph                                          Show the n",
       "url": "https://english.pnn.ps/news/48324",
       "published_at": "Tue, 29 Sep 2026 18:50:00 +0300",
@@ -448,25 +467,6 @@
       "affected_entities": [],
       "coalition_action": "none",
       "risk_effects": {},
-      "entity_updates": []
-    },
-    {
-      "source": "Palestine News Network",
-      "source_type": "Palestinian news network",
-      "title": "PNN’s “Ala Al-Makshouf” Examines the Hidden Cost of Burning Waste in Hebron and Gaza",
-      "url": "https://english.pnn.ps/news/48312",
-      "published_at": "Sat, 26 Sep 2026 10:11:00 +0300",
-      "category": "access",
-      "impact_score": 3.1,
-      "summary": "Headline classified automatically from election/coalition rules; this is not an official fact verification.",
-      "review_status": "auto_reviewed",
-      "confidence_pct": 63,
-      "affected_entities": [],
-      "coalition_action": "none",
-      "risk_effects": {
-        "gaza_feasibility": 5,
-        "jerusalem_feasibility": 0
-      },
       "entity_updates": []
     }
   ],
