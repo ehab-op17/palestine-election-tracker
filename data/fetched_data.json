@@ -1,6 +1,6 @@
 {
   "meta": {
-    "generated_at": "2026-10-03T08:29:19.522401+00:00",
+    "generated_at": "2026-10-03T13:39:49.468939+00:00",
     "election_date": "2026-11-28",
     "note": "Seed data bundled with the app. The app will overwrite this with fetched_data.json from DATA_URL if reachable, but always falls back to this if the network call fails."
   },
@@ -380,6 +380,45 @@
     {
       "source": "Palestine News Network",
       "source_type": "Palestinian news network",
+      "title": "Palestinian School Principal Creates Education Initiative for Displaced Children in Gaza",
+      "url": "https://english.pnn.ps/news/48329",
+      "published_at": "Sat, 03 Oct 2026 13:06:00 +0300",
+      "category": "access",
+      "impact_score": 3.1,
+      "summary": "Headline classified automatically from election/coalition rules; this is not an official fact verification.",
+      "review_status": "auto_reviewed",
+      "confidence_pct": 63,
+      "affected_entities": [],
+      "coalition_action": "none",
+      "risk_effects": {
+        "gaza_feasibility": 5,
+        "jerusalem_feasibility": 0
+      },
+      "entity_updates": []
+    },
+    {
+      "source": "Palestine News Network",
+      "source_type": "Palestinian news network",
+      "title": "EU Diplomatic Momentum Builds on Palestine as Officials Push to Revive Two-State Solution",
+      "url": "https://english.pnn.ps/news/48328",
+      "published_at": "Sat, 03 Oct 2026 11:33:00 +0300",
+      "category": "coalition",
+      "impact_score": 4.5,
+      "summary": "Headline classified automatically from election/coalition rules; this is not an official fact verification.",
+      "review_status": "auto_reviewed",
+      "confidence_pct": 75,
+      "affected_entities": [],
+      "coalition_action": "join",
+      "risk_effects": {
+        "coalition_probability": 6
+      },
+      "entity_updates": [
+        "Automatic signal: entities may be joining or consolidating a coalition."
+      ]
+    },
+    {
+      "source": "Palestine News Network",
+      "source_type": "Palestinian news network",
       "title": "From Handmade in Palestine to the World: Women Entrepreneurs Turn Craft into Opportunity",
       "url": "https://english.pnn.ps/news/48327",
       "published_at": "Thu, 01 Oct 2026 15:25:00 +0300",
@@ -432,41 +471,6 @@
         "gaza_feasibility": 5,
         "jerusalem_feasibility": 0
       },
-      "entity_updates": []
-    },
-    {
-      "source": "Palestine News Network",
-      "source_type": "Palestinian news network",
-      "title": "PNN’s “Ala Al-Makshouf” Examines the Future of Sports in Gaza",
-      "url": "https://english.pnn.ps/news/48314",
-      "published_at": "Sat, 26 Sep 2026 10:23:00 +0300",
-      "category": "access",
-      "impact_score": 3.1,
-      "summary": "Headline classified automatically from election/coalition rules; this is not an official fact verification.",
-      "review_status": "auto_reviewed",
-      "confidence_pct": 63,
-      "affected_entities": [],
-      "coalition_action": "none",
-      "risk_effects": {
-        "gaza_feasibility": 5,
-        "jerusalem_feasibility": 0
-      },
-      "entity_updates": []
-    },
-    {
-      "source": "Palestine News Network",
-      "source_type": "Palestinian news network",
-      "title": "PNN’s “Ala Al-Makshouf” Examines the Struggle to Preserve Palestine’s Heritage",
-      "url": "https://english.pnn.ps/news/48313",
-      "published_at": "Sat, 26 Sep 2026 10:16:00 +0300",
-      "category": "general",
-      "impact_score": 0.0,
-      "summary": "Headline classified automatically from election/coalition rules; this is not an official fact verification.",
-      "review_status": "auto_reviewed",
-      "confidence_pct": 55,
-      "affected_entities": [],
-      "coalition_action": "none",
-      "risk_effects": {},
       "entity_updates": []
     }
   ],
