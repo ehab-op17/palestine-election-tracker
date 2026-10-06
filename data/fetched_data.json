@@ -1,6 +1,6 @@
 {
   "meta": {
-    "generated_at": "2026-10-06T06:46:11.283341+00:00",
+    "generated_at": "2026-10-06T14:04:14.587477+00:00",
     "election_date": "2026-11-28",
     "note": "Seed data bundled with the app. The app will overwrite this with fetched_data.json from DATA_URL if reachable, but always falls back to this if the network call fails."
   },
@@ -380,6 +380,25 @@
     {
       "source": "Palestine News Network",
       "source_type": "Palestinian news network",
+      "title": "Israeli extremist minister participates in demolishing residential building in Jerusalem",
+      "url": "https://english.pnn.ps/news/48334",
+      "published_at": "Tue, 06 Oct 2026 13:42:00 +0300",
+      "category": "access",
+      "impact_score": 3.1,
+      "summary": "Headline classified automatically from election/coalition rules; this is not an official fact verification.",
+      "review_status": "auto_reviewed",
+      "confidence_pct": 63,
+      "affected_entities": [],
+      "coalition_action": "none",
+      "risk_effects": {
+        "gaza_feasibility": 0,
+        "jerusalem_feasibility": 5
+      },
+      "entity_updates": []
+    },
+    {
+      "source": "Palestine News Network",
+      "source_type": "Palestinian news network",
       "title": "Palestinian School Principal Creates Education Initiative for Displaced Children in Gaza",
       "url": "https://english.pnn.ps/news/48329",
       "published_at": "Sat, 03 Oct 2026 13:06:00 +0300",
@@ -441,25 +460,6 @@
       "title": "UK rejects and suspends over 80 export licenses to Israel Paragraph                                          Show the n",
       "url": "https://english.pnn.ps/news/48324",
       "published_at": "Tue, 29 Sep 2026 18:50:00 +0300",
-      "category": "access",
-      "impact_score": 3.1,
-      "summary": "Headline classified automatically from election/coalition rules; this is not an official fact verification.",
-      "review_status": "auto_reviewed",
-      "confidence_pct": 63,
-      "affected_entities": [],
-      "coalition_action": "none",
-      "risk_effects": {
-        "gaza_feasibility": 5,
-        "jerusalem_feasibility": 0
-      },
-      "entity_updates": []
-    },
-    {
-      "source": "Palestine News Network",
-      "source_type": "Palestinian news network",
-      "title": "The CEC: Commencing the Nomination Stage of the 2026 Legislative Elections",
-      "url": "https://english.pnn.ps/news/48315",
-      "published_at": "Sat, 26 Sep 2026 13:44:00 +0300",
       "category": "access",
       "impact_score": 3.1,
       "summary": "Headline classified automatically from election/coalition rules; this is not an official fact verification.",
