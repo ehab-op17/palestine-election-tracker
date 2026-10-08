@@ -1,6 +1,6 @@
 {
   "meta": {
-    "generated_at": "2026-10-08T05:35:39.526830+00:00",
+    "generated_at": "2026-10-08T13:11:31.298915+00:00",
     "election_date": "2026-11-28",
     "note": "Seed data bundled with the app. The app will overwrite this with fetched_data.json from DATA_URL if reachable, but always falls back to this if the network call fails."
   },
@@ -380,6 +380,24 @@
     {
       "source": "Palestine News Network",
       "source_type": "Palestinian news network",
+      "title": "Aida Camp Popular Committee Highlights Palestinian Refugee Issues During France Visit",
+      "url": "https://english.pnn.ps/news/48340",
+      "published_at": "Thu, 08 Oct 2026 12:37:00 +0300",
+      "category": "turnout",
+      "impact_score": 3.1,
+      "summary": "Headline classified automatically from election/coalition rules; this is not an official fact verification.",
+      "review_status": "auto_reviewed",
+      "confidence_pct": 63,
+      "affected_entities": [],
+      "coalition_action": "none",
+      "risk_effects": {
+        "turnout_uncertainty": 5
+      },
+      "entity_updates": []
+    },
+    {
+      "source": "Palestine News Network",
+      "source_type": "Palestinian news network",
       "title": "The Games That Tell Palestine’s Story: A Fight to Keep Heritage Alive",
       "url": "https://english.pnn.ps/news/48336",
       "published_at": "Wed, 07 Oct 2026 11:32:00 +0300",
@@ -449,26 +467,6 @@
         "jerusalem_feasibility": 0
       },
       "entity_updates": []
-    },
-    {
-      "source": "Palestine News Network",
-      "source_type": "Palestinian news network",
-      "title": "EU Diplomatic Momentum Builds on Palestine as Officials Push to Revive Two-State Solution",
-      "url": "https://english.pnn.ps/news/48328",
-      "published_at": "Sat, 03 Oct 2026 11:33:00 +0300",
-      "category": "coalition",
-      "impact_score": 4.5,
-      "summary": "Headline classified automatically from election/coalition rules; this is not an official fact verification.",
-      "review_status": "auto_reviewed",
-      "confidence_pct": 75,
-      "affected_entities": [],
-      "coalition_action": "join",
-      "risk_effects": {
-        "coalition_probability": 6
-      },
-      "entity_updates": [
-        "Automatic signal: entities may be joining or consolidating a coalition."
-      ]
     }
   ],
   "data_quality": {
