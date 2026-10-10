@@ -1,6 +1,6 @@
 {
   "meta": {
-    "generated_at": "2026-10-10T15:48:07.008473+00:00",
+    "generated_at": "2026-10-10T19:56:28.838865+00:00",
     "election_date": "2026-11-28",
     "note": "Seed data bundled with the app. The app will overwrite this with fetched_data.json from DATA_URL if reachable, but always falls back to this if the network call fails."
   },
@@ -380,6 +380,28 @@
     {
       "source": "Palestine News Network",
       "source_type": "Palestinian news network",
+      "title": "Abbas sets Palestinian presidential, legislative elections for September 2027",
+      "url": "https://english.pnn.ps/news/48343",
+      "published_at": "Sat, 10 Oct 2026 21:16:00 +0300",
+      "category": "access",
+      "impact_score": 5.7,
+      "summary": "Headline classified automatically from election/coalition rules; this is not an official fact verification.",
+      "review_status": "auto_reviewed",
+      "confidence_pct": 71,
+      "affected_entities": [],
+      "coalition_action": "none",
+      "risk_effects": {
+        "gaza_feasibility": 5,
+        "jerusalem_feasibility": 5,
+        "election_delay": 8
+      },
+      "entity_updates": [
+        "Automatic signal: election timing may be changing; verify against the official authority."
+      ]
+    },
+    {
+      "source": "Palestine News Network",
+      "source_type": "Palestinian news network",
       "title": "Aida Camp Popular Committee Highlights Palestinian Refugee Issues During France Visit",
       "url": "https://english.pnn.ps/news/48340",
       "published_at": "Thu, 08 Oct 2026 12:37:00 +0300",
@@ -446,25 +468,6 @@
       "risk_effects": {
         "gaza_feasibility": 0,
         "jerusalem_feasibility": 5
-      },
-      "entity_updates": []
-    },
-    {
-      "source": "Palestine News Network",
-      "source_type": "Palestinian news network",
-      "title": "Palestinian School Principal Creates Education Initiative for Displaced Children in Gaza",
-      "url": "https://english.pnn.ps/news/48329",
-      "published_at": "Sat, 03 Oct 2026 13:06:00 +0300",
-      "category": "access",
-      "impact_score": 3.1,
-      "summary": "Headline classified automatically from election/coalition rules; this is not an official fact verification.",
-      "review_status": "auto_reviewed",
-      "confidence_pct": 63,
-      "affected_entities": [],
-      "coalition_action": "none",
-      "risk_effects": {
-        "gaza_feasibility": 5,
-        "jerusalem_feasibility": 0
       },
       "entity_updates": []
     }
